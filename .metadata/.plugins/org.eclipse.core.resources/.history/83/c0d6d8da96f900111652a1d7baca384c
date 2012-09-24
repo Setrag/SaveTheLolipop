@@ -1,0 +1,39 @@
+package saveTheLolipop.moteurGraphique.boucleAffichage;
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+import saveTheLolipop.moteur.elementDeJeu.ElementsJeu;
+
+public class Afficheur {
+	//attributes 
+	private static HashSet<ElementsJeu> elemPresent = new HashSet<ElementsJeu>();
+	
+	//fonctions
+	public static void affichageInitial() {
+		//Test.spawnMiddle();
+	}
+	
+	public static void affichageImage() {
+		Iterator<ElementsJeu> elems = elemPresent.iterator();
+		//System.out.println("element a afficher " + elemPresent.size());
+		while (elems.hasNext()) {
+			elems.next().affiche();
+		}
+	}
+
+	public static void deplacementImage(int delta) {
+		Iterator<ElementsJeu> elems = elemPresent.iterator();
+		while (elems.hasNext()) {
+			elems.next().deplacement(delta);
+		}
+	}
+	
+	public static void optionAffichage() {
+		UtilitaireAffichage.pleineEcran();
+	}
+	
+	public static void addElemPresent(ElementsJeu e) {
+		elemPresent.add(e);
+	}
+}

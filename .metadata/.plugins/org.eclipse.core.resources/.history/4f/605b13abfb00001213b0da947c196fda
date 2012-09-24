@@ -1,0 +1,49 @@
+package saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire;
+
+import java.io.IOException;
+import java.util.Hashtable;
+import java.util.Map;
+
+
+import org.newdawn.slick.Image;
+import org.newdawn.slick.opengl.Texture;
+import org.newdawn.slick.opengl.TextureLoader;
+import org.newdawn.slick.util.ResourceLoader;
+
+import saveTheLolipop.Main;
+import saveTheLolipop.utilitaire.ChargementSauvegarde;
+
+public class ImageChargeur {
+	
+	private static Hashtable<Integer, Image> images = new Hashtable<Integer, Image>(); 
+	
+	public static Image getTexture(int code) {
+		return images.get(code);
+	}
+
+	public static void chargementImages(){
+		Map<Integer, String> pathImages = ChargementSauvegarde.parseData(Main.configPath + "./config/imageData.txt");
+		for(Integer code: pathImages.keySet()) {
+				System.out.println(pathImages.get(code));
+				try {
+					Image tex = chargementFichierImage(Main.configPath + pathImages.get(code));
+					images.put(code, tex);
+					
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+		}
+	}
+	
+	private static Texture chargementFichierImage(String filePath) throws IOException {
+		Texture texture = null;
+		texture = TextureLoader.getTexture("png", ResourceLoader.getResourceAsStream(filePath));
+			System.out.println("Texture loaded: "+texture);
+			System.out.println(">> Image width: "+texture.getImageWidth());
+			System.out.println(">> Image height: "+texture.getImageHeight());
+			System.out.println(">> Texture width: "+texture.getTextureWidth());
+			System.out.println(">> Texture height: "+texture.getTextureHeight());
+			System.out.println(">> Texture ID: "+texture.getTextureID());
+		return texture;
+	}
+}

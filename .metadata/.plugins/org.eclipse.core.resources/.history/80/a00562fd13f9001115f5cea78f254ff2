@@ -1,0 +1,115 @@
+package saveTheLolipop.moteur.elementDeJeu;
+
+import saveTheLolipop.moteur.gestionnaireEvenement.GestionnaireInput;
+import saveTheLolipop.moteur.utilitaire.ConfigurationClavierSouris;
+import saveTheLolipop.moteur.utilitaire.Coordonnees;
+import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
+import saveTheLolipop.moteurGraphique.boucleAffichage.UtilitaireAffichage;
+import saveTheLolipop.moteurGraphique.donneesAffichage.Affichages;
+import saveTheLolipop.moteurGraphique.donneesAffichage.Animations;
+import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.EnumType;
+
+public final class Joueur extends Actifs{
+	
+	private Integer PEx;
+	private Integer DEF;
+	private Integer PM;
+	private Boolean moving;
+	private ConfigurationClavierSouris conf;
+
+	public Joueur() {
+		this.setNom("unnamed");
+		this.setCoord(new Coordonnees(0f, 0f));
+		this.setApparence(EnumType.GUERRIER);
+		this.setPV(100);
+		this.setATT(10);
+		this.setVitesse(0.1f);
+		this.PM = 100;
+		this.DEF = 0;
+		this.PEx = 0;
+		this.moving = false;
+		this.conf = new ConfigurationClavierSouris();
+		ajoutListeElemsAffichier();
+	}
+	
+	public Joueur(String nom, EnumType type) {
+		this.setNom(nom);
+		this.setCoord(new Coordonnees(0f, 0f));
+		this.setApparence(type);
+		this.setPV(100);
+		this.setATT(10);
+		this.setVitesse(0.1f);
+		this.PM = 100;
+		this.DEF = 0;
+		this.PEx = 0;
+		this.moving = false;
+		this.conf = new ConfigurationClavierSouris();
+		ajoutListeElemsAffichier();
+	}
+	
+	public Joueur(String nom, Float x, Float y, EnumType apparence, Integer PV, Integer PM, Integer ATT, Float Vit, Integer DEF, Integer PEx) {
+		this.setNom(nom);
+		this.setCoord(new Coordonnees(x, y));
+		this.setApparence(apparence);
+		this.setPV(PV);
+		this.setATT(ATT);
+		this.setVitesse(Vit);
+		this.PM = PM;
+		this.DEF = DEF;
+		this.PEx = PEx;
+		this.moving = false;
+		this.conf = new ConfigurationClavierSouris();
+		ajoutListeElemsAffichier();
+	}
+	
+	public void affiche() {
+		if (!this.t) {
+			UtilitaireAffichage.spawnMiddle(this);
+			t = true;
+		}
+		moving = GestionnaireInput.enMouvement;
+		if (moving) {
+			Affichages.animationMarche(this.type.code(), this.coord);
+		} else {
+			Affichages.Immobile(this);
+		}
+	}
+	
+	public void deplacement(int delta) {
+		Animations.deplacementSimple(this.getCoord(), this.conf, this.getVitesse(), delta);
+	}
+	
+	public void attaquer() {
+		
+	}
+	
+	//fonction private
+	private void ajoutListeElemsAffichier() {
+		Afficheur.addElemPresent(this);
+	}
+	//////////////////////////////
+	// 		getteur-setteur		//
+	//////////////////////////////
+	public Integer getPEx() {
+		return PEx;
+	}
+	public void setPEx(Integer pEx) {
+		PEx = pEx;
+	}
+	public Integer getDEF() {
+		return DEF;
+	}
+	public void setDEF(Integer dEF) {
+		DEF = dEF;
+	}
+	public Integer getPM() {
+		return PM;
+	}
+	public void setPM(Integer pM) {
+		PM = pM;
+	}
+
+	public ConfigurationClavierSouris getConf() {
+		return conf;
+	}
+}

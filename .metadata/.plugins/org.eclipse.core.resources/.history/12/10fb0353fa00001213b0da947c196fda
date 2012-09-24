@@ -1,0 +1,31 @@
+package saveTheLolipop.moteur.gestionnaireEtats;
+
+import saveTheLolipop.moteur.gestionnaireEtats.etats.Etat;
+import saveTheLolipop.moteur.gestionnaireEtats.etats.fabrique.FabriqueEtat;
+import saveTheLolipop.moteur.gestionnaireEtats.utilitaire.EnumEtat;
+
+public class GestionnaireEtat {
+	private EnumEtat etatCourant;
+	private boolean changementEtat = true;
+	private Etat etat;
+	
+	public GestionnaireEtat() {
+		etatCourant = EnumEtat.JEU;
+	}
+	
+	public void verificateurEtat() {
+		//TODO utiliser la pattern monteur
+		// il faut faire la correspondance EnumEtat/class puis appeler le bon monteur
+		if(changementEtat) {
+			etat = FabriqueEtat.getFabrique(etatCourant).creerEtat();
+			changementEtat = false;
+		}
+		etat.fonctionnementEtat();
+	}
+
+	public void setEtatCourant(EnumEtat etatCourant) {
+		this.etatCourant = etatCourant;
+		changementEtat = true;
+	}
+	
+}

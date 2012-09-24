@@ -1,0 +1,48 @@
+package saveTheLolipop.moteur.gestionnaireEvenements;
+
+import java.util.HashSet;
+import java.util.LinkedList;
+
+import org.lwjgl.input.Mouse;
+
+import saveTheLolipop.moteur.elements.Elements;
+import saveTheLolipop.moteur.elements.menus.Bouton;
+import saveTheLolipop.moteur.gestionnaireEvenements.evenements.ClicBouton;
+import saveTheLolipop.moteur.gestionnaireEvenements.evenements.Evenement;
+import saveTheLolipop.moteur.utilitaire.Coordonnees;
+
+public class GestionnaireEvenement {
+	private LinkedList<Evenement> evenements;
+	private HashSet<Elements> elems = new HashSet<Elements>();
+	
+	public GestionnaireEvenement() {
+		evenements = new LinkedList<Evenement>();
+	}
+	
+	public void gestionEvenement() {
+		while (!evenements.isEmpty()) {
+			evenements.pop().gestionEvenement();
+		}
+	}
+	
+	public void declancheurEvenement() {
+		if(GestionnaireClavierSouris.clickSimple) {
+			System.out.println("clic");
+			for(Elements e : elems) {
+				if(e instanceof Bouton) {
+					evenements.push(new ClicBouton(new Coordonnees(Mouse.getX(), Mouse.getY()), (Bouton) e));
+				}
+			}
+		}
+	}
+	
+	public void empileEvenement(Evenement e) {
+		evenements.push(e);
+	}
+	public void addElemPresent(Elements e) {
+		elems.add(e);
+	}
+	public void delElemPresent(Elements e) {
+		elems.remove(e);
+	}
+}

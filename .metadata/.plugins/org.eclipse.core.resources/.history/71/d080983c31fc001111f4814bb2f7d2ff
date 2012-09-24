@@ -1,0 +1,12 @@
+package saveTheLolipop.moteur.gestionnaireEtats.etats.fabrique;
+
+import saveTheLolipop.moteur.gestionnaireEtats.etats.Etat;
+import saveTheLolipop.moteur.gestionnaireEtats.etats.EtatJeu;
+import saveTheLolipop.moteur.gestionnaireEtats.utilitaire.EnumEtat;
+
+public class FabriqueEtatJeu extends FabriqueEtat{
+	@Override
+	public Etat creerEtat(EnumEtat etat) {
+		return (new EtatJeu());
+	}
+}

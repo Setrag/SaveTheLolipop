@@ -1,0 +1,7 @@
+package saveTheLolipop.moteur.elements.carte;
+
+public class ChargeurCarte {
+	public static void chargerCarte() {
+		
+	}
+}

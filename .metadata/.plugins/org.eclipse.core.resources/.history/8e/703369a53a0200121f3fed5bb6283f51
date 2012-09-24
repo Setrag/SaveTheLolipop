@@ -1,0 +1,16 @@
+package saveTheLolipop.moteur.utilitaire;
+
+public enum EnumFond {
+	FONDHERBE	(4);
+	//ARBRE		(12,12,4))
+	
+	private int code;
+	
+	private EnumFond(int c) {
+		code = c;
+	}
+
+	public int code() {
+		return code;
+	}
+}

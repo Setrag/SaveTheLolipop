@@ -1,0 +1,25 @@
+package saveTheLolipop.moteur.elements.entités;
+
+import saveTheLolipop.moteur.elements.Elements;
+
+public class Decors extends ElementsJeu {
+	
+	@Override
+	public void deplacement(int delta) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void ajoutElement() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void supElement(Elements e) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,67 @@
+package saveTheLolipop.moteur.elements.elementsJeu;
+
+
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.Texture;
+
+import saveTheLolipop.moteur.elements.Elements;
+import saveTheLolipop.moteur.utilitaire.Coordonnees;
+import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.EnumType;
+import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.Formes;
+import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.ImageChargeur;
+
+public abstract class ElementsJeu extends Elements{
+	//attributes
+	private String nom;
+	private EnumType type;
+	
+	//constructeur ?
+	public ElementsJeu() {
+		super();
+		this.nom = "unnamed";
+		this.type = EnumType.GUERRIER;
+	}
+	
+	public ElementsJeu(String nom, EnumType type) {
+		super();
+		this.nom = nom;
+		this.type = type;
+	}
+	
+	public ElementsJeu(String nom, Coordonnees coord, EnumType type) {
+		super(coord);
+		this.nom = nom;
+		this.type = type;
+	}
+	//fonction
+	public void affiche() {
+		Texture texture = ImageChargeur.getTexture(type.code());
+		if (texture == null) {
+			texture = ImageChargeur.getTexture(90);
+		}
+		Color.white.bind();
+		texture.bind();
+		Formes.rectangle(texture.getTextureWidth(), texture.getTextureHeight(),this.getCoord());
+	}
+
+ 	
+	//////////////////////////////
+	// 		getteur-setteur		//
+	//////////////////////////////
+ 	public String getNom() {
+		return nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public EnumType getType() {
+		return type;
+	}
+
+	public void setType(EnumType type) {
+		this.type = type;
+	}
+
+
+}

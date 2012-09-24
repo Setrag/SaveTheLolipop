@@ -1,0 +1,17 @@
+package saveTheLolipop.moteur.gestionnaireEtats.utilitaire;
+
+
+public enum EnumEtat {
+	MENU (1),
+	JEU (2);
+	
+	private int code;
+	
+	private EnumEtat(int c) {
+		code = c;
+	}
+	
+	public int code() {
+		return code;
+	}
+}

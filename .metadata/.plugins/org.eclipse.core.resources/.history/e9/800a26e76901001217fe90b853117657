@@ -1,0 +1,11 @@
+package saveTheLolipop.moteur.gestionnaireEvenements.evenements.bouton.actions;
+
+public class NouveauJeu implements ActionBouton {
+
+	@Override
+	public void actionAssocier() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,42 @@
+package saveTheLolipop.moteur.gestionnaireEvenement;
+
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+
+public class GestionnaireInput {
+	public void gestionnaireClavier() {
+		while (Keyboard.next()){
+			//ici les actions liers aux différente entrée claviers
+			
+		}
+	}
+	
+	public void gestionnaireSouris() {
+		while (Mouse.next()){
+			//ici les actions liers aux différente entrée souris
+			
+		}
+	}
+	
+	private boolean utiliseToucheClavier(int key) {
+		if (Keyboard.getEventKeyState()) {
+			if (Keyboard.getEventKey() == key) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
+	}
+	
+	private boolean utiliseBoutonSouris(int bouton) {
+		if (Mouse.getEventButtonState()) {
+			if (Mouse.getEventButton() == bouton) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
+	}
+}

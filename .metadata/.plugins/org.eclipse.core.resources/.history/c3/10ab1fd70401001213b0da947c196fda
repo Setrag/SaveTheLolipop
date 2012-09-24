@@ -1,0 +1,53 @@
+package saveTheLolipop.moteur.gestionnaireEvenements;
+
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+import saveTheLolipop.moteur.utilitaire.ConfigurationClavierSouris;
+
+public class GestionnaireClavierSouris {
+	//attribut (evenement assosier a l'utilisation du clavier souris)
+	public static boolean enMouvementHaut;
+	public static boolean enMouvementBas;
+	public static boolean enMouvementDroit;
+	public static boolean enMouvementGauche;
+	public static boolean enAttaque;
+	public static boolean enLancementSort;
+	public static boolean enPleinEcran;
+	public static boolean clickSimple;
+	private static ConfigurationClavierSouris conf = new ConfigurationClavierSouris();
+	
+	
+	//gestion des entrer clavier souris
+	public static void gestionnaireClavier() {
+		while (Keyboard.next()){
+			//ici les actions liers aux différente entrée claviers
+			//verif déplacement
+			enMouvementHaut = Keyboard.isKeyDown(conf.getMoveUp());
+			enMouvementBas = Keyboard.isKeyDown(conf.getMoveDown());
+			enMouvementGauche = Keyboard.isKeyDown(conf.getMoveLeft());
+			enMouvementDroit = Keyboard.isKeyDown(conf.getMoveRight());
+			//switch plein écran
+			enPleinEcran = (Keyboard.getEventKeyState() && Keyboard.getEventKey() == Keyboard.KEY_F) ^ enPleinEcran;
+		}
+	}
+	
+	public static void gestionnaireSouris() {
+		while (Mouse.next()){
+			if (Mouse.getEventButtonState()) {
+				if(Mouse.getEventButton() == 0) {
+					//ici les actions liers aux différente entrée souris
+					System.out.println("???");
+
+					clickSimple = true;//Mouse.isButtonDown(0);
+				}
+			}
+		}
+		enAttaque = Mouse.isButtonDown(conf.getAttaqueBase());
+		enLancementSort = Mouse.isButtonDown(conf.getLancementSort());
+	}
+
+	public static void setConf(ConfigurationClavierSouris conf) {
+		GestionnaireClavierSouris.conf = conf;
+	}
+	
+}

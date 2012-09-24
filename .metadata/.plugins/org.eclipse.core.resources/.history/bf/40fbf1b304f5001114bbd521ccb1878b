@@ -1,0 +1,12 @@
+90 ./images/noImage.png
+110 ./images/guerrierUp.png
+
+120 ./images/guerrierDown.png
+121 ./images/guerrierDownMarche1.png
+122 ./images/guerrierDownMarche2.png
+130 ./images/guerrierLeft.png
+140 ./images/guerrierRight.png
+//150 ./images/guerrierUpLeft.png
+//160 ./images/guerrierUpRight.png
+//170 ./images/guerrierDownLeft.png
+//180 ./images/guerrierDownRight.png

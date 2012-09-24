@@ -1,0 +1,21 @@
+1347898787434	Rename type 'Event'
+1347898791013	Move compilation unit
+1347898849587	Delete element
+1347900807926	Move compilation unit
+1347903539818	Delete element
+1347905454693	Delete element
+1347907596818	Delete element
+1347909665433	Rename method 'getTexture'
+1347909681832	Rename local variable 'texture'
+1347910351887	Rename method 'gestion'
+1347956199534	Move compilation unit
+1347956305214	Move compilation unit
+1347956689609	Rename method 'actionAssocier'
+1347956887882	Rename local variable 'infos'
+1347958373302	Rename type 'EtatMenu'
+1347958470382	Rename type 'FabriqueEtatMenu'
+1347993890031	Rename type 'Accueil'
+1348171525378	Rename type 'EnumFond'
+1348171678439	Delete element
+1348351781112	Rename type 'Decors'
+1348351815642	Rename field 'matriceDecor'

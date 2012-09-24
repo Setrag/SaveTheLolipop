@@ -1,0 +1,42 @@
+package saveTheLolipop.moteur.gestionnaireEvenements.evenements.bouton;
+
+
+import saveTheLolipop.moteur.elements.menus.Bouton;
+import saveTheLolipop.moteur.gestionnaireEvenements.evenements.Evenement;
+import saveTheLolipop.moteur.utilitaire.Coordonnees;
+
+
+public class ClicBouton extends Evenement {
+	private Coordonnees lieuClic;
+	private Bouton boutonClic;
+	
+	public ClicBouton(Coordonnees coord, Bouton bouton) {
+		this.lieuClic = coord;
+		this.boutonClic = bouton;
+	}
+
+	@Override
+	public void gestionEvenement() {
+		//ce que je veux
+		
+		if(boutonClic.clic(lieuClic)) {
+			boutonClic.actionAssocier();
+//			Moteur.getGesEtat().setEtatCourant(EnumEtat.JEU);
+//			switch (boutonClic.getInfoCode()) {
+//			case 0:
+//				new Joueur("laurent", EnumType.GUERRIER);
+//				break;
+//			case 1:
+//				new Joueur("laurent", EnumType.MAGE);
+//				break;
+//			case 2:
+//				new Joueur("laurent", EnumType.ARCHER);
+//				break;
+//			default:
+//				break;
+//			}
+			System.out.println("clic sur: " + boutonClic.getNom());
+		}
+	}
+
+}

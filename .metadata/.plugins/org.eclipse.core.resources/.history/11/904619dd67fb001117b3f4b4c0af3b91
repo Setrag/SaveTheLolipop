@@ -1,0 +1,29 @@
+package saveTheLolipop.moteur.elements.carte;
+
+import java.util.List;
+
+import saveTheLolipop.moteur.elements.Elements;
+import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.EnumType;
+
+public class Carte extends Elements{
+	private EnumType fond;
+	private List<Elements> decors;
+	
+	public Carte() {
+		chargeurCarte(0);
+	}
+	@Override
+	public void affiche() {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void deplacement(int delta) {
+		// TODO Auto-generated method stub		
+	}
+	
+	private void chargeurCarte(int codeCarte) {
+		// TODO charge la carte correspondan au code depuis un fichier
+	}
+	
+}

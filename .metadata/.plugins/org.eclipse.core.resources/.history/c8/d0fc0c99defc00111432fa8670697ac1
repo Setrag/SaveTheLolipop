@@ -1,0 +1,9 @@
+package saveTheLolipop.moteur.gestionnaireEtats.etats;
+
+public class EtatJeu extends Etat{
+	@Override
+	public void fonctionnementEtat() {
+		// TODO Auto-generated method stub
+		System.out.println("etat jeu");
+	}
+}

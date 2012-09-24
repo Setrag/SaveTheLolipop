@@ -1,0 +1,15 @@
+package saveTheLolipop.moteur.etats;
+
+import saveTheLolipop.moteur.etats.utilitaire.EnumEtat;
+
+public class GestionnaireEtat {
+	public EnumEtat etatCourant;
+	
+	public GestionnaireEtat() {
+		etatCourant = EnumEtat.MENU;
+	}
+	
+	public void verificateurEtat() {
+		//TODO change l'état actuel suite a reception d'une demande (bof)
+	}
+}

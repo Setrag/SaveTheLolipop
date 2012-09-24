@@ -1,0 +1,14 @@
+package saveTheLolipop.moteur.gestionnaireEtats.etats;
+
+import saveTheLolipop.moteur.elements.entités.Joueur;
+import saveTheLolipop.moteur.utilitaire.EnumType;
+
+public class EtatJeu extends Etat{
+	public EtatJeu() {
+		System.out.println("etat jeu");
+	}
+	@Override
+	public void fonctionnementEtat() {
+		// TODO Auto-generated method stub
+	}
+}

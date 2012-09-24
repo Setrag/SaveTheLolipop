@@ -1,0 +1,14 @@
+package saveTheLolipop.moteur.gestionnaireEvenements.evenements.bouton.actions;
+
+import saveTheLolipop.moteur.elements.entités.Joueur;
+import saveTheLolipop.moteur.gestionnaireEtats.utilitaire.EnumEtat;
+
+public class NouveauJeu implements ActionBouton {
+
+	@Override
+	public void action() {
+		Moteur.getGesEtat().setEtatCourant(EnumEtat.JEU);
+		new Joueur();
+	}
+
+}

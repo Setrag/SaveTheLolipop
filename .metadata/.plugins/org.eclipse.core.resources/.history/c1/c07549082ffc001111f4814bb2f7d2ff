@@ -1,0 +1,10 @@
+package saveTheLolipop.moteur.gestionnaireEtats.etats;
+
+import saveTheLolipop.moteur.gestionnaireEtats.utilitaire.EnumEtat;
+
+public class fabriqueEtat {
+	
+	public static Etat creerEtat(EnumEtat etat) {
+		
+	}
+}

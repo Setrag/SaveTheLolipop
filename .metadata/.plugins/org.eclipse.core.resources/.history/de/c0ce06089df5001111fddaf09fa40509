@@ -1,0 +1,112 @@
+package saveTheLolipop.moteurGraphique.boucleAffichage;
+
+import static org.lwjgl.opengl.GL11.*;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.opengl.Display;
+
+
+public class Test {
+	private static int TAILLECARRE = 2;
+	private static final int TAILLE = 5;
+	private static float VITESSE = 0.2f;
+	private static int y;
+	private static int x;
+	private static double direction;
+
+	public static void deplacementSimple(int delta) {
+		Integer largeur = Display.getWidth();
+		Integer hauteur = Display.getHeight();
+		
+		rotation  += 0.15f * delta;
+		if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)) x -= 0.35f * delta;
+		if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) x += 0.35f * delta;
+		
+		if (Keyboard.isKeyDown(Keyboard.KEY_UP)) y += 0.35f * delta;
+		if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)) y -= 0.35f * delta;
+		
+		if (x < 0) x = 0;
+		if (x > largeur) x = largeur;
+		if (y < 0) y = 0;
+		if (y > hauteur) y = hauteur;
+	}
+	
+	public static void deplacementComplexe(int delta) {
+		Integer largeur = Display.getWidth();
+		Integer hauteur = Display.getHeight();
+		
+		if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)){
+			x -= VITESSE * delta;
+			direction = -Math.PI / 2;
+		}
+		if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) {
+			x += VITESSE * delta;
+			direction = Math.PI / 2;
+		}
+		if (Keyboard.isKeyDown(Keyboard.KEY_UP)) {
+			if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) {
+				direction = Math.PI / 4;
+			} else if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)){
+				direction = -Math.PI / 4;
+			} else {
+				direction = 0;
+			}
+			y += VITESSE * delta;
+		}
+		if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)) {
+			if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) {
+				direction = 3* Math.PI / 4;
+			} else if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)){
+				direction = -3 * Math.PI / 4;
+			}else {
+				direction = Math.PI;
+			}
+			y -= VITESSE * delta;
+		}
+		
+		if (x < 0) x = 0;
+		if (x > largeur) x = largeur;
+		if (y < 0) y = 0;
+		if (y > hauteur) y = hauteur;
+	}
+
+	public static void triangleRouge() {
+		glColor3f(0.8f, 0.2f, 0.2f);
+		glPushMatrix();
+			glBegin(GL_TRIANGLES);
+				glVertex2d(x - Math.cos(direction)*TAILLE, y + Math.sin(direction)*TAILLE);
+				glVertex2d(x + Math.cos(direction)*TAILLE, y - Math.sin(direction)*TAILLE);
+				glVertex2d(x + Math.sin(direction)*TAILLE*2, y + Math.cos(direction)*TAILLE*2);
+			glEnd();
+		glPopMatrix();
+	}
+
+	public static void carreBleu() {
+		//Clear the screen and depth buffer
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		
+		//set the color of the quad (R,G,B,A)
+		glColor3f(0.5f, 0.5f, 1.0f);
+		
+		//draw quad
+		glPushMatrix();
+			//glTranslatef(x, y, 0);
+			//glRotatef(rotation, 0f, 0f, 1f);
+			//glTranslatef(-x, -y, 0);
+			
+			glBegin(GL_QUADS);
+				glVertex2f(x - TAILLECARRE , y - TAILLECARRE);
+				glVertex2f(x + TAILLECARRE , y - TAILLECARRE);
+				glVertex2f(x + TAILLECARRE , y + TAILLECARRE);
+				glVertex2f(x - TAILLECARRE , y + TAILLECARRE);
+			glEnd();
+		glPopMatrix();
+	}
+	
+	public static void spawnMiddle() {
+		Integer largeur = Display.getWidth();
+		Integer hauteur	= Display.getHeight();
+		
+		x = largeur / 2;
+		y = hauteur / 2;
+	}
+}

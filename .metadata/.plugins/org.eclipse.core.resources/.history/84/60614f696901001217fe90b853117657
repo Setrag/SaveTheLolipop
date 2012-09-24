@@ -1,0 +1,5 @@
+package saveTheLolipop.moteur.gestionnaireEvenements.evenements.bouton;
+
+public interface ActionBouton {
+	public void action();
+}

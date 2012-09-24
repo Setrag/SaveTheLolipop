@@ -1,0 +1,20 @@
+package saveTheLolipop.moteur.elementDeJeu;
+
+import saveTheLolipop.moteur.utilitaire.Coordonnees;
+import saveTheLolipop.moteurGraphique.donneesAffichage.Animations;
+
+public class Mobs extends Actifs{
+	public Mobs(String nom, Float x, Float y, Integer PV, Integer ATT) {
+		this.setNom(nom);
+		this.setCoord(new Coordonnees(x, y));
+		this.setPV(PV);
+		this.setATT(ATT);
+	}
+	
+	public void deplacement(int delta) {
+		Animations.deplacementSimple(this.getCoord(), this.getVitesse(), delta);
+	}
+	public void attaquer() {
+		
+	}
+}

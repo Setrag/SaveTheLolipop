@@ -1,0 +1,56 @@
+package saveTheLolipop.moteur.elements.carte;
+
+import java.util.Map;
+
+import saveTheLolipop.Main;
+import saveTheLolipop.moteur.elements.Elements;
+import saveTheLolipop.moteur.elements.entités.Decors;
+import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireEvenement;
+import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
+import saveTheLolipop.utilitaire.ChargementSauvegarde;
+
+public class Carte extends Elements{
+	private Decors[][] matriceDecor;
+	
+	public Carte() {
+		matriceDecor = new Decors[100][100];
+	}
+	public Carte(int codeCarte) {
+		chargeurCarte(codeCarte);
+	}
+	
+	@Override
+	public void affiche() {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void deplacement(int delta) {
+		// TODO Auto-generated method stub		
+	}
+	
+	@Override
+	public void ajoutElement() {
+		Afficheur.addElemPresent(this);
+		GestionnaireEvenement.addElemPresent(this);	
+	}
+
+	@Override
+	public void supElement(Elements e) {
+		Afficheur.delElemPresent(this);
+		GestionnaireEvenement.delElemPresent(this);
+	}
+	
+	private Carte chargeurCarte(int codeCarte) {
+		// charge la carte correspondant au code depuis un fichier
+		Map<Integer, String> pathCarte = ChargementSauvegarde.parseData(Main.configPath + "./config/carteData.txt");
+		return (Carte) ChargementSauvegarde.deSerializer(pathCarte.get(codeCarte));
+	}
+	public Decors[][] getMatriceDecor() {
+		return matriceDecor;
+	}
+	public void setMatriceDecor(Integer x, Integer y, Decors decors) {
+		this.matriceDecor[x][y] = decors;
+	}
+	
+}

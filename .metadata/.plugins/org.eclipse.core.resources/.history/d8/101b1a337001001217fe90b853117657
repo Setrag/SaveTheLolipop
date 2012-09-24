@@ -1,0 +1,11 @@
+package saveTheLolipop.moteur.gestionnaireEvenements.evenements.bouton.actions;
+
+public class AuMenuChoix implements ActionBouton {
+
+	@Override
+	public void action() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

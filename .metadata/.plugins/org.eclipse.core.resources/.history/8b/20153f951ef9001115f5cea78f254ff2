@@ -1,0 +1,56 @@
+package saveTheLolipop.moteur.gestionnaireEvenement;
+
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+
+import saveTheLolipop.moteur.utilitaire.ConfigurationClavierSouris;
+
+public class GestionnaireInput {
+	//attribut (evenement assosier a l'utilisation du clavier souris)
+	public static boolean enMouvementHaut;
+	public static boolean enMouvementBas;
+	public static boolean enMouvementDroit;
+	public static boolean enMouvementGauche;
+	public static boolean enAttaque;
+	public static boolean enPleinEcran;
+	private static ConfigurationClavierSouris conf;
+	
+	//gestion des entrer clavier souris
+	public static void gestionnaireClavier() {
+		while (Keyboard.next()){
+			//ici les actions liers aux différente entrée claviers
+			//verif déplacement
+			enMouvementHaut = utiliseToucheClavier(conf.moveUp, enMouvementHaut);
+			enMouvementBas = utiliseToucheClavier(conf.moveDown, enMouvementBas);
+			enMouvementGauche = utiliseToucheClavier(conf.moveLeft, enMouvementGauche);
+			enMouvementDroit = utiliseToucheClavier(conf.moveRight, enMouvementDroit);
+			//switch plein écran
+			enPleinEcran = (Keyboard.getEventKeyState() && Keyboard.getEventKey() == Keyboard.KEY_F) ^ enPleinEcran;
+		}
+	}
+	
+	public static void gestionnaireSouris() {
+		while (Mouse.next()){
+			//ici les actions liers aux différente entrée souris
+			enAttaque = Mouse.isButtonDown(conf.attaqueBase);
+		}
+	}
+	
+	private static boolean utiliseToucheClavier(int key, boolean prec) {
+		if (Keyboard.getEventKeyState()) {
+			if (Keyboard.getEventKey() == key) {
+				return true;
+			} 
+		} else {
+			if (Keyboard.getEventKey() == key) {
+				return false;
+			}
+		}
+		return prec;
+	}
+
+	public static void setConf(ConfigurationClavierSouris conf) {
+		GestionnaireClavierSouris.conf = conf;
+	}
+	
+}

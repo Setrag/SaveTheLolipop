@@ -1,0 +1,21 @@
+package saveTheLolipop.moteur.gestionnaireEvenements.evenements;
+
+import saveTheLolipop.moteur.elements.menus.Bouton;
+import saveTheLolipop.moteur.utilitaire.Coordonnees;
+
+public class ClicBouton extends Evenement {
+	private Coordonnees lieuClic;
+	private Bouton boutonClic;
+	
+	public ClicBouton(Coordonnees coord, Bouton bouton) {
+		this.lieuClic = coord;
+		this.boutonClic = bouton;
+	}
+
+	@Override
+	public void gestionEvenement() {
+		System.out.println(lieuClic.getX() + " " + lieuClic.getY());
+		if(boutonClic.clic(lieuClic)) System.out.println("clic sur le bouton " + boutonClic.getNom());
+	}
+
+}

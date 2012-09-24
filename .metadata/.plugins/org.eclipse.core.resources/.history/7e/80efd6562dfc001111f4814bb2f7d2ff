@@ -1,0 +1,9 @@
+package saveTheLolipop.moteur.gestionnaireEtats.etats;
+
+import saveTheLolipop.moteur.gestionnaireEtats.utilitaire.EnumEtat;
+
+public abstract class MonteurEtat {
+	public EnumEtat etat;
+
+	public abstract void fonctionnementEtat();
+}

@@ -1,0 +1,14 @@
+package saveTheLolipop.moteur.gestionnaireEtats.etats;
+
+public class EtatEditeurCarte extends Etat {
+	public EtatEditeurCarte() {
+		System.out.println("etat editeur de carte");
+	}
+	
+	@Override
+	public void fonctionnementEtat() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,12 @@
+package saveTheLolipop;
+
+public class saveTheLolipop {
+
+	/**
+	 * @param args
+	 */
+	public static void main() {
+		
+	}
+
+}

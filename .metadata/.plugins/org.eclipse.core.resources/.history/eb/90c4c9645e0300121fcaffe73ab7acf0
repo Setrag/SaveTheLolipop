@@ -1,0 +1,26 @@
+package saveTheLolipop.moteur.elements.entités;
+
+import saveTheLolipop.moteur.Moteur;
+import saveTheLolipop.moteur.elements.Elements;
+import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
+
+public class Decors extends ElementsJeu {
+	
+	@Override
+	public void deplacement(int delta) {
+		// pas de déplacement
+	}
+
+	@Override
+	public void ajoutElement() {
+		Afficheur.addElemPresent(this);
+		Moteur.getGesEvent().addElemPresent(this);	
+	}
+
+	@Override
+	public void supElement(Elements e) {
+		Afficheur.delElemPresent(this);
+		Moteur.getGesEvent().delElemPresent(this);	
+	}
+
+}

@@ -1,0 +1,21 @@
+package saveTheLolipop.moteur.elements;
+
+import saveTheLolipop.moteur.utilitaire.Coordonnees;
+
+public abstract class Elements {
+	private Coordonnees coord;
+	
+	public Elements() {
+		this.coord = new Coordonnees();
+	}
+	public Elements(Coordonnees coord) {
+		this.coord = coord;
+	}
+	public Coordonnees getCoord() {
+		return coord;
+	}
+	public void setCoord(Coordonnees coord) {
+		this.coord = coord;
+	}
+	
+}

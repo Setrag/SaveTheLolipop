@@ -1,0 +1,16 @@
+package saveTheLolipop.moteur.gestionnaireEtats.etats;
+
+import saveTheLolipop.moteur.elements.menus.Accueil;
+
+public class EtatMenu extends Etat{
+	public EtatMenu() {
+		System.out.println("etat menu");
+		String[] boutons = {"guerrier", "mage", "archer"};
+		Integer[] infos = {0, 1, 2};
+		new Accueil("Save the LoliPop", boutons);
+	}
+	@Override
+	public void fonctionnementEtat() {
+		
+	}
+}

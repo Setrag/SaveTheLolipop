@@ -1,0 +1,18 @@
+package saveTheLolipop.moteur.etats;
+
+import saveTheLolipop.moteur.etats.utilitaire.EnumEtat;
+
+public class GestionnaireEtat {
+	public EnumEtat etatCourant;
+	
+	public GestionnaireEtat() {
+		etatCourant = EnumEtat.MENU;
+	}
+	
+	public void verificateurEtat() {
+		//TODO utiliser la pattern monteur
+		// il faut faire la correspondance EnumEtat/class puis appeler le bon monteur
+		
+		
+	}
+}

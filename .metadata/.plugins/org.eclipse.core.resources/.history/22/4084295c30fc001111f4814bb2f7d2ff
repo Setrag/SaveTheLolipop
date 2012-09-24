@@ -1,0 +1,5 @@
+package saveTheLolipop.moteur.gestionnaireEtats.etats.fabrique;
+
+public class FabriqueEtatJeu {
+
+}

@@ -1,0 +1,5 @@
+package saveTheLolipop.moteur.Etats;
+
+public class GestionnaireEtat {
+
+}

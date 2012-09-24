@@ -1,0 +1,14 @@
+package saveTheLolipop.moteur.gestionnaireEtats.etats;
+
+import saveTheLolipop.moteur.gestionnaireEtats.utilitaire.EnumEtat;
+
+public abstract class Etat {
+	public EnumEtat etat;
+
+	public abstract void fonctionnementEtat();
+
+	public static Etat createEtat(EnumEtat etatCourant) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

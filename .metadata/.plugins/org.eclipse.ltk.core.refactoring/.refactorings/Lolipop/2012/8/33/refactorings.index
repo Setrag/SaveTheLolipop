@@ -1,0 +1,28 @@
+1345222829752	Move compilation unit
+1345222872149	Delete element
+1345222904713	Delete element
+1345222931914	Delete element
+1345222939494	Delete element
+1345223705607	Delete element
+1345225172439	Delete element
+1345230617911	Delete element
+1345304022810	Move compilation units
+1345304039222	Delete elements
+1345305030973	Move compilation unit
+1345314289000	Rename local variable 'displayTest'
+1345316134008	Delete element
+1345318998531	Rename field 'TAILLECARRE'
+1345358443765	Rename method 'initialAffiche'
+1345358767505	Rename package 'saveTheLolipop.moteurGraphique.afficheur'
+1345358831818	Rename method 'update'
+1345358958559	Rename method 'renderGL'
+1345359343867	Move method
+1345359351733	Move method
+1345359353996	Move method
+1345359685773	Rename method 'modificationToApply'
+1345359711432	Rename method 'imageToAffiche'
+1345359790582	Move method
+1345402082344	Rename type 'Apparence'
+1345403799084	Move compilation unit
+1345407017469	Rename local variable 'affichage'
+1345410097848	Move compilation unit

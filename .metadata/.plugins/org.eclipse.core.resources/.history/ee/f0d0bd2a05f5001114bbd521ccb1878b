@@ -1,0 +1,41 @@
+90 ./images/noImage.png
+
+//images guerrier
+110 ./images/guerrierUp.png
+120 ./images/guerrierDown.png
+121 ./images/guerrierDownMarche1.png
+122 ./images/guerrierDownMarche2.png
+130 ./images/guerrierLeft.png
+140 ./images/guerrierRight.png
+//150 ./images/guerrierUpLeft.png
+//160 ./images/guerrierUpRight.png
+//170 ./images/guerrierDownLeft.png
+//180 ./images/guerrierDownRight.png
+
+//images archer
+210 ./images/archerUp.png
+211 ./images/archerUpMarche1.png
+212 ./images/archerUpMarche2.png
+220 ./images/archerDown.png
+221 ./images/archerDownMarche1.png
+222 ./images/archerDownMarche2.png
+230 ./images/archerLeft.png
+240 ./images/archerRight.png
+//250 ./images/archerUpLeft.png
+//260 ./images/archerUpRight.png
+//270 ./images/archerDownLeft.png
+//280 ./images/archerDownRight.png
+
+//images mage
+310 ./images/mageUp.png
+311 ./images/mageUpMarche1.png
+312 ./images/mageUpMarche2.png
+320 ./images/mageDown.png
+321 ./images/mageDownMarche1.png
+322 ./images/mageDownMarche2.png
+330 ./images/mageLeft.png
+340 ./images/mageRight.png
+//350 ./images/mageUpLeft.png
+//360 ./images/mageUpRight.png
+//370 ./images/mageDownLeft.png
+//380 ./images/mageDownRight.png

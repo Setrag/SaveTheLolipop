@@ -1,0 +1,19 @@
+package saveTheLolipop.moteur.utilitaire;
+
+
+public enum EnumType {
+	GUERRIER	(1), 
+	ARCHER		(2),
+	MAGE		(3);
+	//ARBRE		(12,12,4))
+	
+	private int code;
+	
+	private EnumType(int c) {
+		code = c;
+	}
+
+	public int code() {
+		return code;
+	}	
+}

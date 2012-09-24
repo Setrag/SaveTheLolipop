@@ -1,0 +1,42 @@
+package saveTheLolipop.moteur.elements.menus;
+
+import org.lwjgl.opengl.Display;
+
+import saveTheLolipop.moteur.Moteur;
+import saveTheLolipop.moteur.elements.Elements;
+import saveTheLolipop.moteur.utilitaire.Coordonnees;
+import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
+import saveTheLolipop.moteurGraphique.donneesAffichage.Affichages;
+import saveTheLolipop.moteurGraphique.donneesAffichage.Animations;
+
+public class MenuDroite extends Elements {
+	private boolean visible;
+
+	public MenuDroite(String nom) {
+		super(nom, new Coordonnees(Display.getWidth(), 0));
+		this.visible = false;
+	}
+	@Override
+	public void affiche() {
+		Affichages.afficheString(this.getNom(), new Coordonnees(this.getCoord().getX(), 10f));
+		Affichages.menuDroite(this.getCoord());
+	}
+
+	@Override
+	public void deplacement(int delta) {
+		Animations.apparitionDroite(this.getCoord(), visible);
+	}
+
+	@Override
+	public void ajoutElement() {
+		Afficheur.addElemPresent(this);
+		Moteur.getGesEvent().addElemPresent(this);	
+	}
+
+	@Override
+	public void supElement(Elements e) {
+		Afficheur.delElemPresent(this);
+		Moteur.getGesEvent().delElemPresent(this);
+	}
+
+}

@@ -1,0 +1,7 @@
+package saveTheLolipop.moteur.gestionnaireEtats.etats;
+
+public abstract class Etat {
+	protected Etats etat;
+	
+	public abstract void fonctionnementEtat();
+}

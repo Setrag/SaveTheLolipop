@@ -1,0 +1,35 @@
+package saveTheLolipop.moteur.gestionnaireEtats;
+
+import saveTheLolipop.moteur.gestionnaireEtats.etats.Etat;
+import saveTheLolipop.moteur.gestionnaireEtats.etats.fabrique.FabriqueEtat;
+import saveTheLolipop.moteur.gestionnaireEtats.utilitaire.EnumEtat;
+import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireClavierSouris;
+import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireEvenement;
+import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
+
+public class GestionnaireEtat {
+	private static EnumEtat etatCourant;
+	private static boolean changementEtat = true;
+	private static Etat etat;
+	
+	public GestionnaireEtat() {
+		etatCourant = EnumEtat.MENU;
+	}
+	
+	public static void verificateurEtat() {
+		if(changementEtat) {
+			etat = FabriqueEtat.getFabrique(etatCourant).creerEtat();
+			changementEtat = false;
+		}
+		etat.fonctionnementEtat();
+	}
+
+	public static void setEtatCourant(EnumEtat etat) {
+		etatCourant = etat;
+		GestionnaireEvenement.delTousElemPresent();
+		Afficheur.delTousElemPresent();
+		GestionnaireClavierSouris.reset();
+		changementEtat = true;
+	}
+	
+}
