@@ -10,7 +10,7 @@ public class NouveauJeuG implements ActionBouton {
 	@Override
 	public void action() {
 		GestionnaireEtat.setEtatCourant(EnumEtat.JEU);
-		new Joueur("laurent",EnumType.GUERRIER);
+		new Joueur("laurent", EnumType.GUERRIER);
 
 	}
 

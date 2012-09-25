@@ -11,8 +11,9 @@ public class Bouton extends Elements {
 	private Integer largeur;
 	private Integer hauteur;
 	private ActionBouton action;
-	
-	public Bouton(String nom, ActionBouton action, Coordonnees coord, Integer largeur, Integer hauteur) {
+
+	public Bouton(String nom, ActionBouton action, Coordonnees coord,
+			Integer largeur, Integer hauteur) {
 		super(nom, coord);
 		this.hauteur = hauteur;
 		this.largeur = largeur;
@@ -26,8 +27,9 @@ public class Bouton extends Elements {
 
 	@Override
 	public void deplacement(int delta) {
-		
+
 	}
+
 	@Override
 	public void ajoutElement() {
 		Afficheur.addElemPresent(this);
@@ -37,20 +39,22 @@ public class Bouton extends Elements {
 	@Override
 	public void supElement(Elements e) {
 		Afficheur.delElemPresent(this);
-		GestionnaireEvenement.delElemPresent(this);	
+		GestionnaireEvenement.delElemPresent(this);
 	}
-	
+
 	public Boolean clic(Coordonnees coordClic) {
 		Float xClic = coordClic.getX();
 		Float yClic = coordClic.getY();
 		Float xBouton = this.getCoord().getX();
 		Float yBouton = this.getCoord().getY();
-		if(xBouton < xClic && (xBouton + largeur) > xClic && yBouton < yClic && (yBouton + hauteur) > yClic) return true;
+		if (xBouton < xClic && (xBouton + largeur) > xClic && yBouton < yClic
+				&& (yBouton + hauteur) > yClic)
+			return true;
 		return false;
 	}
 
 	public void actionAssocier() {
 		action.action();
 	}
-	
+
 }

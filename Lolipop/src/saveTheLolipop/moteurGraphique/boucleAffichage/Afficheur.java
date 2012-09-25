@@ -7,17 +7,17 @@ import saveTheLolipop.moteur.elements.Elements;
 import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.UtilitaireAffichage;
 
 public class Afficheur {
-	//attributes 
+	// attributes
 	private static HashSet<Elements> elemPresent = new HashSet<Elements>();
-	
-	//fonctions
+
+	// fonctions
 	public static void affichageInitial() {
-		//Test.spawnMiddle();
+		// Test.spawnMiddle();
 	}
-	
+
 	public static void affichageImage() {
 		Iterator<Elements> elems = elemPresent.iterator();
-		//System.out.println("element a afficher " + elemPresent.size());
+		// System.out.println("element a afficher " + elemPresent.size());
 		while (elems.hasNext()) {
 			elems.next().affiche();
 		}
@@ -29,15 +29,15 @@ public class Afficheur {
 			elems.next().deplacement(delta);
 		}
 	}
-	
+
 	public static void optionAffichage() {
 		UtilitaireAffichage.pleineEcran();
 	}
-	
+
 	public static void addElemPresent(Elements e) {
 		elemPresent.add(e);
 	}
-	
+
 	public static void delElemPresent(Elements e) {
 		elemPresent.remove(e);
 	}

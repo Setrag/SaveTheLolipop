@@ -9,11 +9,11 @@ import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
 import static org.lwjgl.opengl.GL11.*;
 
 public class MoteurGraphique {
-	//attributes
+	// attributes
 	private int HAUTEUR = 720;
 	private int LARGEUR = 1280;
-	
-	//fonctions
+
+	// fonctions
 	public MoteurGraphique() {
 		try {
 			Display.setDisplayMode(new DisplayMode(LARGEUR, HAUTEUR));
@@ -23,30 +23,29 @@ public class MoteurGraphique {
 			System.exit(0);
 		}
 	}
-	
+
 	public void init() {
-		//init affichage OpenGl
+		// init affichage OpenGl
 		initGL();
 		Afficheur.affichageInitial();
-		//Utilitaire.displayModeList();
+		// Utilitaire.displayModeList();
 	}
-	
+
 	public void frame(int delta) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			//debut affichage OpenGl
-			Afficheur.affichageImage();
-			Afficheur.deplacementImage(delta);
-			Afficheur.optionAffichage();
-			//fin affichage OpenGl
-			Display.update();
-			Display.sync(60);
+		// debut affichage OpenGl
+		Afficheur.affichageImage();
+		Afficheur.deplacementImage(delta);
+		Afficheur.optionAffichage();
+		// fin affichage OpenGl
+		Display.update();
+		//Display.sync(60);
 	}
-	
-	
-	private void initGL(){
+
+	private void initGL() {
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		
+
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 		glOrtho(0, LARGEUR, HAUTEUR, 0, 1, -1);

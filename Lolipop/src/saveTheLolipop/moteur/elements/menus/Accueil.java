@@ -26,8 +26,10 @@ public class Accueil extends Elements {
 		super(nom, new Coordonnees((Display.getWidth() / 2f), 10f));
 		Float distInterBouton = this.getCoord().getY() + 100;
 		Float tiers = (this.getCoord().getX() / 3) * 2;
-		for(int i = 0; i < boutons.length; i++) {
-			messageBoutons.add(new Bouton(boutons[i], actions[i], new Coordonnees(tiers, distInterBouton), (Display.getWidth() / 3), 20));
+		for (int i = 0; i < boutons.length; i++) {
+			messageBoutons.add(new Bouton(boutons[i], actions[i],
+					new Coordonnees(tiers, distInterBouton), (Display
+							.getWidth() / 3), 20));
 			distInterBouton += 50;
 		}
 		Afficheur.addElemPresent(this);
@@ -35,28 +37,29 @@ public class Accueil extends Elements {
 
 	@Override
 	public void affiche() {
-		Affichages.afficheString(this.getNom(), new Coordonnees(this.getCoord().getX()- this.getNom().length()*5, this.getCoord().getY()));
-		for(Bouton b : messageBoutons) {
+		Affichages.afficheString(this.getNom(), new Coordonnees(this.getCoord()
+				.getX() - this.getNom().length() * 5, this.getCoord().getY()));
+		for (Bouton b : messageBoutons) {
 			b.affiche();
 		}
 	}
 
 	@Override
 	public void deplacement(int delta) {
-		//pas de déplacement pour le menu
+		// pas de déplacement pour le menu
 	}
 
 	@Override
 	public void ajoutElement() {
 		Afficheur.addElemPresent(this);
 		GestionnaireEvenement.addElemPresent(this);
-		
+
 	}
 
 	@Override
 	public void supElement(Elements e) {
 		Afficheur.delElemPresent(this);
 		GestionnaireEvenement.delElemPresent(this);
-		
-	}	
+
+	}
 }

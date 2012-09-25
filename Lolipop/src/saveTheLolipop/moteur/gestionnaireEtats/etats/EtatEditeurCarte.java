@@ -9,7 +9,7 @@ public class EtatEditeurCarte extends Etat {
 		new MenuDroite("inventaire");
 		new Carte();
 	}
-	
+
 	@Override
 	public void fonctionnementEtat() {
 		// TODO Auto-generated method stub

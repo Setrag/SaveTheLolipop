@@ -16,10 +16,12 @@ public class MenuDroite extends Elements {
 		super(nom, new Coordonnees(Display.getWidth(), 0));
 		this.largeur = 200f;
 	}
+
 	@Override
 	public void affiche() {
 		Affichages.menuDroite(this.getCoord(), this.largeur);
-		Affichages.afficheString(this.getNom(), new Coordonnees(this.getCoord().getX() + (largeur / 2) - (this.getNom().length() * 5), 10f));
+		Affichages.afficheString(this.getNom(), new Coordonnees(this.getCoord()
+				.getX() + (largeur / 2) - (this.getNom().length() * 5), 10f));
 	}
 
 	@Override
@@ -30,7 +32,7 @@ public class MenuDroite extends Elements {
 	@Override
 	public void ajoutElement() {
 		Afficheur.addElemPresent(this);
-		GestionnaireEvenement.addElemPresent(this);	
+		GestionnaireEvenement.addElemPresent(this);
 	}
 
 	@Override

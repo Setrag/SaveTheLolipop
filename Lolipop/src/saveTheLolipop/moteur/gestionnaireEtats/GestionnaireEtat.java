@@ -11,9 +11,9 @@ public class GestionnaireEtat {
 	private static EnumEtat etatCourant = EnumEtat.MENU;
 	private static boolean changementEtat = true;
 	private static Etat etat;
-	
+
 	public static void verificateurEtat() {
-		if(changementEtat) {
+		if (changementEtat) {
 			etat = FabriqueEtat.getFabrique(etatCourant).creerEtat();
 			changementEtat = false;
 		}
@@ -27,5 +27,5 @@ public class GestionnaireEtat {
 		GestionnaireClavierSouris.reset();
 		changementEtat = true;
 	}
-	
+
 }

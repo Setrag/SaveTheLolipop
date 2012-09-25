@@ -7,16 +7,18 @@ import saveTheLolipop.moteur.utilitaire.EnumType;
 import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
 import saveTheLolipop.moteurGraphique.donneesAffichage.Animations;
 
-public final class Mobs extends Actifs{
-	public Mobs(String nom, Coordonnees coord, EnumType type, Integer PV, Integer ATT, Float Vit) {
+public final class Mobs extends Actifs {
+	public Mobs(String nom, Coordonnees coord, EnumType type, Integer PV,
+			Integer ATT, Float Vit) {
 		super(nom, coord, type, PV, ATT, Vit);
 	}
-	
+
 	public void deplacement(int delta) {
 		Animations.deplacementSimple(this.getCoord(), this.getVitesse(), delta);
 	}
+
 	public void attaquer() {
-		//TODO appel animation + evenement
+		// TODO appel animation + evenement
 	}
 
 	@Override

@@ -4,7 +4,7 @@ import saveTheLolipop.moteur.gestionnaireEtats.etats.Etat;
 import saveTheLolipop.moteur.gestionnaireEtats.utilitaire.EnumEtat;
 
 public abstract class FabriqueEtat {
-	
+
 	public static FabriqueEtat getFabrique(EnumEtat etat) {
 		switch (etat) {
 		case MENU:
@@ -19,5 +19,6 @@ public abstract class FabriqueEtat {
 			return null;
 		}
 	}
+
 	public abstract Etat creerEtat();
 }
