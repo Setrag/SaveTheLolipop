@@ -2,6 +2,8 @@ package saveTheLolipop.moteur.elements.carte;
 
 import java.util.Map;
 
+import org.lwjgl.opengl.Display;
+
 import saveTheLolipop.Main;
 import saveTheLolipop.moteur.elements.Elements;
 import saveTheLolipop.moteur.elements.entités.CaseQuadrillage;
@@ -15,11 +17,11 @@ public class Carte extends Elements{
 	private Coordonnees coord;
 	
 	public Carte() {
-		matricecarte = new CaseQuadrillage[100][100];
+		matricecarte = new CaseQuadrillage[Display.getWidth() / 25][Display.getHeight() / 25];
 		Float x = 0f;
 		Float y = 0f;
-		for(int i = 0; i < 100; i++) {
-			for(int j = 0; j < 100; j++) {
+		for(int i = 0; i < Display.getWidth() / 25; i++) {
+			for(int j = 0; j < Display.getHeight() / 25; j++) {
 				matricecarte[i][j] = new CaseQuadrillage(new Coordonnees(x, y));
 				x += 25;
 			}
@@ -34,11 +36,7 @@ public class Carte extends Elements{
 	
 	@Override
 	public void affiche() {
-		for(int i = 0; i < 100; i++) {
-			for(int j = 0; j < 100; j++) {
-				matricecarte[i][j].affiche();
-			}
-		}
+		//affichage des case de decors deja faite
 	}
 
 	@Override
