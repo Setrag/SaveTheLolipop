@@ -10,8 +10,8 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class MoteurGraphique {
 	// attributes
-	private int HAUTEUR = 720;
-	private int LARGEUR = 1280;
+	private int HAUTEUR = 600;
+	private int LARGEUR = 1024;
 
 	// fonctions
 	public MoteurGraphique() {
@@ -28,7 +28,6 @@ public class MoteurGraphique {
 		// init affichage OpenGl
 		initGL();
 		Afficheur.affichageInitial();
-		// Utilitaire.displayModeList();
 	}
 
 	public void frame(int delta) {

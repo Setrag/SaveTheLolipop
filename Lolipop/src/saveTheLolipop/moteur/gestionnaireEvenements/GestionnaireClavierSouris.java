@@ -12,7 +12,7 @@ public class GestionnaireClavierSouris {
 	public static boolean enMouvementGauche;
 	public static boolean enAttaque;
 	public static boolean enLancementSort;
-	public static boolean enPleinEcran;
+	public static boolean enPleinEcran = true;
 	public static boolean clickSimple;
 	public static boolean enMenu;
 	public static boolean echap;
@@ -32,8 +32,7 @@ public class GestionnaireClavierSouris {
 			enMenu = (Keyboard.getEventKeyState() && Keyboard.getEventKey() == Keyboard.KEY_E)
 					^ enMenu;
 			// switch plein écran
-			enPleinEcran = (Keyboard.getEventKeyState() && Keyboard
-					.getEventKey() == Keyboard.KEY_F) ^ enPleinEcran;
+			enPleinEcran = (Keyboard.getEventKeyState() && Keyboard.getEventKey() == Keyboard.KEY_F) ^ enPleinEcran;
 		}
 	}
 
@@ -61,7 +60,6 @@ public class GestionnaireClavierSouris {
 		enMouvementGauche = false;
 		enAttaque = false;
 		enLancementSort = false;
-		enPleinEcran = false;
 		clickSimple = false;
 		enMenu = false;
 	}

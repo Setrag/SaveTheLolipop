@@ -12,7 +12,7 @@ public class Afficheur {
 
 	// fonctions
 	public static void affichageInitial() {
-		// Test.spawnMiddle();
+		//UtilitaireAffichage.displayModeList();
 	}
 
 	public static void affichageImage() {
