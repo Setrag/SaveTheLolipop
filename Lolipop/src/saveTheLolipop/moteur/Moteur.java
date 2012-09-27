@@ -13,7 +13,7 @@ public class Moteur {
 	}
 
 	public void init() {
-
+		//GestionnaireClavierSouris.enPleinEcran = true;
 	}
 
 	public void frame(int delta) {

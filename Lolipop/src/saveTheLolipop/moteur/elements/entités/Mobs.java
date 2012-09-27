@@ -5,7 +5,7 @@ import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireEvenement;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
 import saveTheLolipop.moteur.utilitaire.EnumType;
 import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
-import saveTheLolipop.moteurGraphique.donneesAffichage.Animations;
+import saveTheLolipop.moteurGraphique.donneesAffichage.DeplacementAffichages;
 
 public final class Mobs extends Actifs {
 	public Mobs(String nom, Coordonnees coord, EnumType type, Integer PV,
@@ -14,7 +14,7 @@ public final class Mobs extends Actifs {
 	}
 
 	public void deplacement(int delta) {
-		Animations.deplacementSimple(this.getCoord(), this.getVitesse(), delta);
+		DeplacementAffichages.deplacementSimple(this.getCoord(), this.getVitesse(), delta);
 	}
 
 	public void attaquer() {

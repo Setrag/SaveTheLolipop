@@ -5,6 +5,7 @@ import org.newdawn.slick.Image;
 import saveTheLolipop.moteur.elements.Elements;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
 import saveTheLolipop.moteur.utilitaire.EnumType;
+import saveTheLolipop.moteurGraphique.donneesAffichage.Affichages;
 import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.ImageChargeur;
 
 public abstract class ElementsJeu extends Elements {
@@ -29,11 +30,11 @@ public abstract class ElementsJeu extends Elements {
 
 	// fonction
 	public void affiche() {
-		Image texture = ImageChargeur.getImage(type.code());
-		if (texture == null) {
-			texture = ImageChargeur.getImage(90);
+		Image image = ImageChargeur.getImage(type.code());
+		if (image == null) {
+			image = ImageChargeur.getImage(90);
 		}
-		texture.draw(this.getCoord().getX(), this.getCoord().getY());
+		Affichages.afficheImage(image, this.getCoord());
 	}
 
 	public abstract void deplacement(int delta);

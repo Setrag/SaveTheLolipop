@@ -3,13 +3,13 @@ package saveTheLolipop.moteur.elements.entités;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
 import saveTheLolipop.moteur.utilitaire.EnumType;
 import saveTheLolipop.moteurGraphique.donneesAffichage.Affichages;
-import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.UtilitaireAffichage;
 
 public abstract class Actifs extends ElementsJeu {
 	// attributes
 	private Integer PV;
 	private Integer ATT;
 	private Float Vitesse;
+	protected Boolean moving;
 	protected boolean t;
 
 	// constructeur ?
@@ -18,6 +18,7 @@ public abstract class Actifs extends ElementsJeu {
 		this.PV = 100;
 		this.ATT = 10;
 		this.Vitesse = 0.15f;
+		this.moving = false;
 	}
 
 	public Actifs(String nom, EnumType type) {
@@ -25,6 +26,7 @@ public abstract class Actifs extends ElementsJeu {
 		this.PV = 100;
 		this.ATT = 10;
 		this.Vitesse = 0.15f;
+		this.moving = false;
 	}
 
 	public Actifs(String nom, Coordonnees coord, EnumType type, Integer PV,
@@ -33,6 +35,7 @@ public abstract class Actifs extends ElementsJeu {
 		this.PV = PV;
 		this.ATT = ATT;
 		this.Vitesse = Vitesse;
+		this.moving = false;
 	}
 
 	// functions
@@ -41,11 +44,11 @@ public abstract class Actifs extends ElementsJeu {
 	public abstract void attaquer();
 
 	public void affiche() {
-		if (!t) {
-			UtilitaireAffichage.spawnMiddle(this);
-			t = true;
+		if (moving) {
+			Affichages.animationMarche(this.getType().code(), this.getCoord());
+		} else {
+			Affichages.Immobile(this.getType().code(), this.getCoord());
 		}
-		Affichages.animationMarche(this.getType().code(), this.getCoord());
 	}
 
 	// ////////////////////////////
