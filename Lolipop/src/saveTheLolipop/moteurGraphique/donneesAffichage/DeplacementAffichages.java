@@ -5,7 +5,7 @@ import org.lwjgl.opengl.Display;
 import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireClavierSouris;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
 
-public class Animations {
+public class DeplacementAffichages {
 	public static Coordonnees deplacementSimple(Coordonnees coord, Float Vit,
 			int delta) {
 		Float largeur = (float) Display.getWidth();

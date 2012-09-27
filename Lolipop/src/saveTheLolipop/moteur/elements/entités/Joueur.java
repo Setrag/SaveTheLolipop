@@ -7,8 +7,7 @@ import saveTheLolipop.moteur.utilitaire.ConfigurationClavierSouris;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
 import saveTheLolipop.moteur.utilitaire.EnumType;
 import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
-import saveTheLolipop.moteurGraphique.donneesAffichage.Affichages;
-import saveTheLolipop.moteurGraphique.donneesAffichage.Animations;
+import saveTheLolipop.moteurGraphique.donneesAffichage.DeplacementAffichages;
 import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.UtilitaireAffichage;
 
 public final class Joueur extends Actifs {
@@ -16,7 +15,6 @@ public final class Joueur extends Actifs {
 	private Integer PEx;
 	private Integer DEF;
 	private Integer PM;
-	private Boolean moving;
 	private ConfigurationClavierSouris conf;
 
 	public Joueur() {
@@ -24,7 +22,6 @@ public final class Joueur extends Actifs {
 		this.PM = 100;
 		this.DEF = 0;
 		this.PEx = 0;
-		this.moving = false;
 		this.conf = new ConfigurationClavierSouris();
 	}
 
@@ -33,7 +30,6 @@ public final class Joueur extends Actifs {
 		this.PM = 100;
 		this.DEF = 0;
 		this.PEx = 0;
-		this.moving = false;
 		this.conf = new ConfigurationClavierSouris();
 		this.ajoutElement();
 	}
@@ -44,7 +40,6 @@ public final class Joueur extends Actifs {
 		this.PM = PM;
 		this.DEF = DEF;
 		this.PEx = PEx;
-		this.moving = false;
 		this.conf = new ConfigurationClavierSouris();
 	}
 
@@ -57,15 +52,11 @@ public final class Joueur extends Actifs {
 				|| GestionnaireClavierSouris.enMouvementBas
 				|| GestionnaireClavierSouris.enMouvementDroit
 				|| GestionnaireClavierSouris.enMouvementGauche;
-		if (moving) {
-			Affichages.animationMarche(this.getType().code(), this.getCoord());
-		} else {
-			Affichages.Immobile(this.getType().code(), this.getCoord());
-		}
+		super.affiche();
 	}
 
 	public void deplacement(int delta) {
-		Animations.deplacementSimple(this.getCoord(), this.getVitesse(), delta);
+		DeplacementAffichages.deplacementSimple(this.getCoord(), this.getVitesse(), delta);
 	}
 
 	public void attaquer() {

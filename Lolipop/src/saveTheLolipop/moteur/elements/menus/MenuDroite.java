@@ -7,7 +7,7 @@ import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireEvenement;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
 import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
 import saveTheLolipop.moteurGraphique.donneesAffichage.Affichages;
-import saveTheLolipop.moteurGraphique.donneesAffichage.Animations;
+import saveTheLolipop.moteurGraphique.donneesAffichage.DeplacementAffichages;
 
 public class MenuDroite extends Elements {
 	private Float largeur;
@@ -26,7 +26,7 @@ public class MenuDroite extends Elements {
 
 	@Override
 	public void deplacement(int delta) {
-		Animations.apparitionDroite(this.getCoord(), this.largeur);
+		DeplacementAffichages.apparitionDroite(this.getCoord(), this.largeur);
 	}
 
 	@Override

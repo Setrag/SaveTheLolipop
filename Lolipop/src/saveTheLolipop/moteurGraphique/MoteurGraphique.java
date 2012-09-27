@@ -1,11 +1,14 @@
 package saveTheLolipop.moteurGraphique;
 
+
+
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
+import org.newdawn.slick.Graphics;
 
 import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
-//import saveTheLolipop.moteurGraphique.afficheurs.Utilitaire;
+import saveTheLolipop.moteurGraphique.donneesAffichage.Affichages;
 import static org.lwjgl.opengl.GL11.*;
 
 public class MoteurGraphique {
@@ -25,6 +28,7 @@ public class MoteurGraphique {
 	}
 
 	public void init() {
+		Affichages.setG(new Graphics(1, 1));
 		// init affichage OpenGl
 		initGL();
 		Afficheur.affichageInitial();

@@ -12,7 +12,7 @@ public class GestionnaireClavierSouris {
 	public static boolean enMouvementGauche;
 	public static boolean enAttaque;
 	public static boolean enLancementSort;
-	public static boolean enPleinEcran = true;
+	public static boolean enPleinEcran;
 	public static boolean clickSimple;
 	public static boolean enMenu;
 	public static boolean echap;
