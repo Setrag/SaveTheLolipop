@@ -6,7 +6,7 @@ public class FinJeu implements ActionBouton {
 
 	@Override
 	public void action() {
-		GestionnaireEvenement.arretDuJeu();
+		GestionnaireEvenement.setArretJeu(true);
 	}
 
 }

@@ -13,6 +13,7 @@ import saveTheLolipop.moteur.gestionnaireEvenements.evenements.bouton.ClicBouton
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
 
 public class GestionnaireEvenement {
+	public static boolean arretJeu;
 	private static LinkedList<Evenement> evenements = new LinkedList<Evenement>();;
 	private static HashSet<Elements> elems = new HashSet<Elements>();
 
@@ -37,15 +38,11 @@ public class GestionnaireEvenement {
 	}
 
 	public static boolean estArret() {
-		if (Display.isCloseRequested()) {
-			return arretDuJeu();
+		if (Display.isCloseRequested() || arretJeu) {
+			Display.destroy();
+			return true;
 		}
 		return false;
-	}
-
-	public static boolean arretDuJeu() {
-		Display.destroy();
-		return true;
 	}
 
 	public static void empileEvenement(Evenement e) {
@@ -62,5 +59,9 @@ public class GestionnaireEvenement {
 
 	public static void delTousElemPresent() {
 		elems.clear();
+	}
+	
+	public static void setArretJeu(boolean arretJeu) {
+		GestionnaireEvenement.arretJeu = arretJeu;
 	}
 }
