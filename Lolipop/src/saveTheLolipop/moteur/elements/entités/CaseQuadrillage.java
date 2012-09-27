@@ -7,7 +7,7 @@ import saveTheLolipop.moteur.utilitaire.EnumType;
 import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
 
 public class CaseQuadrillage extends ElementsJeu {
-	private ElementsJeu element;
+	private ElementsJeu elementJeu;
 
 	public CaseQuadrillage(Coordonnees coord) {
 		super("herbe", coord, EnumType.HERBE);
@@ -20,8 +20,8 @@ public class CaseQuadrillage extends ElementsJeu {
 	@Override
 	public void affiche() {
 		super.affiche();
-		if (element != null)
-			element.affiche();
+		if (elementJeu != null)
+			elementJeu.affiche();
 	}
 
 	@Override

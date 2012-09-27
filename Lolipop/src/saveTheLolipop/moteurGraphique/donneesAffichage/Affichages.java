@@ -55,17 +55,17 @@ public class Affichages {
 	}
 
 	public static void afficheString(String str, Coordonnees coord) {
-		Float x = coord.getX();
-		Float y = coord.getY();
-		g.drawString(str, x, y);
+		g.drawString(str, coord.getX(), coord.getY());
 	}
 
 	public static void afficheImage(Image img, Coordonnees coord) {
 		img.draw(coord.getX(), coord.getY());
 	}
+	
 	public static void menuDroite(Coordonnees coord, Float largeur) {
 		g.setColor(Color.darkGray);
 		g.fillRect(coord.getX(), coord.getY(), largeur, Display.getHeight());
+		g.resetTransform();
 	}
 	
 	

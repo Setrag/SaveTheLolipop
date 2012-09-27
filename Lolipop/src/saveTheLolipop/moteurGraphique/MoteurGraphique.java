@@ -28,8 +28,8 @@ public class MoteurGraphique {
 	}
 
 	public void init() {
-		// init affichage OpenGl
 		Affichages.setG(new Graphics(1, 1));
+		// init affichage OpenGl
 		initGL();
 		Afficheur.affichageInitial();
 	}
