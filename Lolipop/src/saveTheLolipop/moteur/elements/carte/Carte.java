@@ -7,9 +7,7 @@ import org.lwjgl.opengl.Display;
 import saveTheLolipop.Main;
 import saveTheLolipop.moteur.elements.Elements;
 import saveTheLolipop.moteur.elements.entités.CaseQuadrillage;
-import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireEvenement;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
-import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
 import saveTheLolipop.utilitaire.ChargementSauvegarde;
 
 public class Carte extends Elements {
@@ -43,18 +41,6 @@ public class Carte extends Elements {
 	@Override
 	public void deplacement(int delta) {
 		// TODO Auto-generated method stub
-	}
-
-	@Override
-	public void ajoutElement() {
-		Afficheur.addElemPresent(this);
-		GestionnaireEvenement.addElemPresent(this);
-	}
-
-	@Override
-	public void supElement(Elements e) {
-		Afficheur.delElemPresent(this);
-		GestionnaireEvenement.delElemPresent(this);
 	}
 
 	private Carte chargeurCarte(int codeCarte) {

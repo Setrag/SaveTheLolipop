@@ -1,12 +1,9 @@
 package saveTheLolipop.moteur.elements.entités;
 
-import saveTheLolipop.moteur.elements.Elements;
 import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireClavierSouris;
-import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireEvenement;
 import saveTheLolipop.moteur.utilitaire.ConfigurationClavierSouris;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
 import saveTheLolipop.moteur.utilitaire.EnumType;
-import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
 import saveTheLolipop.moteurGraphique.donneesAffichage.DeplacementAffichages;
 import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.UtilitaireAffichage;
 
@@ -63,18 +60,6 @@ public final class Joueur extends Actifs {
 		// TODO appel animation + evenement
 	}
 
-	// fonction private
-	@Override
-	public void ajoutElement() {
-		Afficheur.addElemPresent(this);
-		GestionnaireEvenement.addElemPresent(this);
-	}
-
-	@Override
-	public void supElement(Elements e) {
-		Afficheur.delElemPresent(this);
-		GestionnaireEvenement.delElemPresent(this);
-	}
 
 	// ////////////////////////////
 	// getteur-setteur //

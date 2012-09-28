@@ -1,10 +1,7 @@
 package saveTheLolipop.moteur.elements.entités;
 
-import saveTheLolipop.moteur.elements.Elements;
-import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireEvenement;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
 import saveTheLolipop.moteur.utilitaire.EnumType;
-import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
 
 public class CaseQuadrillage extends ElementsJeu {
 	private ElementsJeu elementJeu;
@@ -27,18 +24,6 @@ public class CaseQuadrillage extends ElementsJeu {
 	@Override
 	public void deplacement(int delta) {
 		// pas de déplacement
-	}
-
-	@Override
-	public void ajoutElement() {
-		Afficheur.addElemPresent(this);
-		GestionnaireEvenement.addElemPresent(this);
-	}
-
-	@Override
-	public void supElement(Elements e) {
-		Afficheur.delElemPresent(this);
-		GestionnaireEvenement.delElemPresent(this);
 	}
 
 }

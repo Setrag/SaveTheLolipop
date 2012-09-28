@@ -1,11 +1,13 @@
 package saveTheLolipop.moteur.elements;
 
+import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireEvenement;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
+import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
 
 public abstract class Elements {
 	private String nom;
 	private Coordonnees coord;
-
+	
 	public Elements() {
 		this.nom = "unnamed";
 		this.coord = new Coordonnees();
@@ -28,9 +30,15 @@ public abstract class Elements {
 
 	public abstract void deplacement(int delta);
 
-	public abstract void ajoutElement();
+	public void ajoutElement() {
+		Afficheur.addElemPresent(this);
+		GestionnaireEvenement.addElemPresent(this);;
+	}
 
-	public abstract void supElement(Elements e);
+	public void supElement() {
+		Afficheur.delElemPresent(this);
+		GestionnaireEvenement.delElemPresent(this);;
+	}
 
 	// ////////////////////////////
 	// getteur-setteur //
