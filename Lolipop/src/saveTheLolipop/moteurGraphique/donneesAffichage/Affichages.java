@@ -54,7 +54,8 @@ public class Affichages {
 		g.drawString(messageBouton, x + (largeur / 2) - messageBouton.length() * 5, y);
 	}
 
-	public static void afficheString(String str, Coordonnees coord) {
+	public static void afficheString(String str, Coordonnees coord, Color c) {
+		g.setColor(c);
 		g.drawString(str, coord.getX(), coord.getY());
 	}
 
@@ -65,7 +66,6 @@ public class Affichages {
 	public static void menuDroite(Coordonnees coord, Float largeur) {
 		g.setColor(Color.darkGray);
 		g.fillRect(coord.getX(), coord.getY(), largeur, Display.getHeight());
-		g.resetTransform();
 	}
 	
 	

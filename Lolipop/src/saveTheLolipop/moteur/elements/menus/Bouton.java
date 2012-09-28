@@ -1,10 +1,8 @@
 package saveTheLolipop.moteur.elements.menus;
 
 import saveTheLolipop.moteur.elements.Elements;
-import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireEvenement;
 import saveTheLolipop.moteur.gestionnaireEvenements.evenements.bouton.actions.ActionBouton;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
-import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
 import saveTheLolipop.moteurGraphique.donneesAffichage.Affichages;
 
 public class Bouton extends Elements {
@@ -28,18 +26,6 @@ public class Bouton extends Elements {
 	@Override
 	public void deplacement(int delta) {
 
-	}
-
-	@Override
-	public void ajoutElement() {
-		Afficheur.addElemPresent(this);
-		GestionnaireEvenement.addElemPresent(this);
-	}
-
-	@Override
-	public void supElement(Elements e) {
-		Afficheur.delElemPresent(this);
-		GestionnaireEvenement.delElemPresent(this);
 	}
 
 	public Boolean clic(Coordonnees coordClic) {

@@ -2,13 +2,14 @@ package saveTheLolipop.moteurGraphique.boucleAffichage;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 import saveTheLolipop.moteur.elements.Elements;
 import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.UtilitaireAffichage;
 
 public class Afficheur {
 	// attributes
-	private static HashSet<Elements> elemPresent = new HashSet<Elements>();
+	private static Set<Elements> elemPresent = new HashSet<Elements>();
 
 	// fonctions
 	public static void affichageInitial() {
@@ -45,4 +46,5 @@ public class Afficheur {
 	public static void delTousElemPresent() {
 		elemPresent.clear();
 	}
+
 }
