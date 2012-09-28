@@ -17,11 +17,11 @@ public class Carte extends Elements {
 	//private Coordonnees coord;
 
 	public Carte() {
-		matricecarte = new CaseQuadrillage[(Display.getHeight() / 16) + 1][(Display.getWidth() / 16) + 1];
+		matricecarte = new CaseQuadrillage[(Display.getHeight() / 16) + 1][(Display.getWidth() / 16) - 9];
 		Float x = 0f;
 		Float y = 0f;
 		for (int i = 0; i <= Display.getHeight() / 16; i++) {
-			for (int j = 0; j <= Display.getWidth() / 16; j++) {
+			for (int j = 0; j < (Display.getWidth() / 16) - 9; j++) {
 				matricecarte[i][j] = new CaseQuadrillage(new Coordonnees(x, y));
 				x += 16;
 			}
