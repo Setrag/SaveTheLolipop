@@ -7,7 +7,7 @@ import saveTheLolipop.moteurGraphique.donneesAffichage.DeplacementAffichages;
 public final class Mobs extends Actifs {
 	public Mobs(String nom, Coordonnees coord, EnumType type, Integer PV,
 			Integer ATT, Float Vit) {
-		super(nom, coord, type, PV, ATT, Vit);
+		super(nom, coord, type, PV, ATT, Vit, 1);
 	}
 
 	public void deplacement(int delta) {

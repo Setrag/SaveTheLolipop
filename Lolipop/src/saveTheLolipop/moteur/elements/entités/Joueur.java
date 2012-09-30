@@ -23,7 +23,7 @@ public final class Joueur extends Actifs {
 	}
 
 	public Joueur(String nom, EnumType type) {
-		super(nom, type);
+		super(nom, type, 1);
 		this.PM = 100;
 		this.DEF = 0;
 		this.PEx = 0;
@@ -33,7 +33,7 @@ public final class Joueur extends Actifs {
 
 	public Joueur(String nom, Coordonnees coord, EnumType type, Integer PV,
 			Integer PM, Integer ATT, Float Vit, Integer DEF, Integer PEx) {
-		super(nom, coord, type, PV, ATT, Vit);
+		super(nom, coord, type, PV, ATT, Vit, 1);
 		this.PM = PM;
 		this.DEF = DEF;
 		this.PEx = PEx;

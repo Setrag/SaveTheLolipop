@@ -42,7 +42,7 @@ public class MoteurGraphique {
 		Afficheur.optionAffichage();
 		// fin affichage OpenGl
 		Display.update();
-		Display.sync(60);
+		//Display.sync(60);
 	}
 
 	private void initGL() {

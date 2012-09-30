@@ -11,8 +11,7 @@ public class EtatMenuPrincipale extends Etat {
 	public EtatMenuPrincipale() {
 		System.out.println("etat menu");
 		String[] boutons = { "jeu", "choix personnage", "editeur de carte", "Quitter" };
-		ActionBouton[] actions = { new NouveauJeu(), new AuMenuChoix(),
-				new NouveauEditeurCarte(), new FinJeu() };
+		ActionBouton[] actions = { new NouveauJeu(), new AuMenuChoix(),	new NouveauEditeurCarte(), new FinJeu() };
 		new Menu("Save the LoliPop", boutons, actions);
 	}
 

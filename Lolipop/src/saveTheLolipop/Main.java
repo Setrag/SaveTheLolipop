@@ -25,8 +25,6 @@ public class Main {
 		}
 		boolean arretDuJeu = false;
 		int delta;
-		// Elements perso = new Joueur();
-		// System.out.println("le nom du personnage est : " + perso.getNom());
 		MoteurGraphique moteurGraphique = new MoteurGraphique();
 		Moteur moteur = new Moteur();
 

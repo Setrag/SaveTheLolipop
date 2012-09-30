@@ -7,22 +7,26 @@ import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
 public abstract class Elements {
 	private String nom;
 	private Coordonnees coord;
+	private Integer profondeurAffichage;
 	
 	public Elements() {
 		this.nom = "unnamed";
 		this.coord = new Coordonnees();
+		this.profondeurAffichage = 1;
 		this.ajoutElement();
 	}
 
-	public Elements(String nom) {
+	public Elements(String nom, Integer profondeurAffichage) {
 		this.nom = nom;
 		this.coord = new Coordonnees();
+		this.profondeurAffichage = profondeurAffichage;
 		this.ajoutElement();
 	}
 
-	public Elements(String nom, Coordonnees coord) {
+	public Elements(String nom, Coordonnees coord, Integer profondeurAffichage) {
 		this.nom = nom;
 		this.coord = coord;
+		this.profondeurAffichage = profondeurAffichage;
 		this.ajoutElement();
 	}
 
@@ -31,12 +35,12 @@ public abstract class Elements {
 	public abstract void deplacement(int delta);
 
 	public void ajoutElement() {
-		Afficheur.addElemPresent(this);
+		Afficheur.addElemPresent(this, profondeurAffichage);
 		GestionnaireEvenement.addElemPresent(this);;
 	}
 
 	public void supElement() {
-		Afficheur.delElemPresent(this);
+		Afficheur.delElemPresent(this, profondeurAffichage);
 		GestionnaireEvenement.delElemPresent(this);;
 	}
 
@@ -57,6 +61,10 @@ public abstract class Elements {
 
 	public void setCoord(Coordonnees coord) {
 		this.coord = coord;
+	}
+
+	public void setProfondeurAffichage(Integer profondeurAffichage) {
+		this.profondeurAffichage = profondeurAffichage;
 	}
 
 }
