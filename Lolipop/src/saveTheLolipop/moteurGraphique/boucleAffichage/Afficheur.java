@@ -6,11 +6,13 @@ import java.util.Map;
 import java.util.Set;
 
 import saveTheLolipop.moteur.elements.Elements;
+import saveTheLolipop.moteur.elements.entites.Actifs;
 import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.UtilitaireAffichage;
 
 public class Afficheur {
 	// attributes
 	private static Map<Integer, Set<Elements>> elemPresent = new HashMap<Integer, Set<Elements>>();
+	private static Set<Actifs> elemActif = new HashSet<Actifs>();
 
 	// fonctions
 	public static void affichageInitial() {
@@ -21,7 +23,7 @@ public class Afficheur {
 	public static void affichageImage() {
 		for (int i = 0; i < elemPresent.size(); i ++) {
 			Set<Elements> elemsPresentHauteur = elemPresent.get(i);
-			System.out.println("element a afficher " + elemPresent.get(i).size() + " pour la profondeur " + i);
+			//System.out.println("element a afficher " + elemPresent.get(i).size() + " pour la profondeur " + i);
 			for (Elements e : elemsPresentHauteur) {
 				e.affiche();
 				//System.out.println(e.getNom());
@@ -30,11 +32,8 @@ public class Afficheur {
 	}
 
 	public static void deplacementImage(int delta) {
-		for (int i = 0; i < elemPresent.size(); i ++) {
-			Set<Elements> elemsPresentHauteur = elemPresent.get(i);
-			for (Elements e : elemsPresentHauteur) {
-				e.deplacement(delta);
-			}
+		for (Actifs a : elemActif) {
+			a.deplacement(delta);
 		}
 	}
 
@@ -42,6 +41,14 @@ public class Afficheur {
 		UtilitaireAffichage.pleineEcran();
 	}
 
+	public static void addElemActif(Actifs a) {
+		elemActif.add(a);
+	}
+	
+	public static void delElemActif(Actifs a) {
+		elemActif.remove(a);
+	}
+	
 	public static void addElemPresent(Elements e, Integer profondeur) {
 		elemPresent.get(profondeur).add(e);
 	}

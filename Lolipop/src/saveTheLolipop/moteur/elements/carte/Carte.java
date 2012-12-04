@@ -7,17 +7,21 @@ import org.newdawn.slick.Color;
 
 import saveTheLolipop.Main;
 import saveTheLolipop.moteur.elements.Elements;
-import saveTheLolipop.moteur.elements.entités.CaseQuadrillage;
+import saveTheLolipop.moteur.elements.entites.CaseQuadrillage;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
 import saveTheLolipop.moteurGraphique.donneesAffichage.Affichages;
 import saveTheLolipop.utilitaire.ChargementSauvegarde;
 
-public class Carte extends Elements {
+public class Carte extends Elements implements java.io.Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3110602875092335566L;
 	private CaseQuadrillage[][] matricecarte;
 	//private Coordonnees coord;
 
 	public Carte() {
-		super("Carte test", 1);
+		super("Carte_test", 1);
 		matricecarte = new CaseQuadrillage[(Display.getHeight() / 16) + 1][(Display.getWidth() / 16) + 1];
 		Float x = 0f;
 		Float y = 0f;
@@ -43,10 +47,11 @@ public class Carte extends Elements {
 	}
 
 	@Override
-	public void deplacement(int delta) {
+	public void verificationEvenement() {
 		// TODO Auto-generated method stub
+		
 	}
-
+	
 	private Carte chargeurCarte(int codeCarte) {
 		// charge la carte correspondant au code depuis un fichier
 		Map<Integer, String> pathCarte = ChargementSauvegarde.parseData(Main.configPath + "./config/carteData.txt");

@@ -4,10 +4,12 @@ import saveTheLolipop.moteur.elements.carte.Carte;
 import saveTheLolipop.moteur.elements.menus.MenuDroite;
 
 public class EtatEditeurCarte extends Etat {
+	Carte c;
 	public EtatEditeurCarte() {
 		System.out.println("etat editeur de carte");
-		new MenuDroite("inventaire");
-		new Carte();
+		c = new Carte();
+		new MenuDroite("inventaire",c);
+		
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 package saveTheLolipop.moteur.gestionnaireEtats.etats;
 
-import saveTheLolipop.moteur.elements.menus.Menu;
+import saveTheLolipop.moteur.elements.menus.MenuPrincipale;
 import saveTheLolipop.moteur.gestionnaireEvenements.evenements.bouton.actions.*;
 
 public class EtatMenuChoixJoueur extends Etat {
@@ -8,7 +8,7 @@ public class EtatMenuChoixJoueur extends Etat {
 		System.out.println("etat choix joueur");
 		String[] boutons = { "Guerrier", "Mage", "Archer" };
 		ActionBouton[] actions = { new NouveauJeuG(), new NouveauJeuM(), new NouveauJeuA() };
-		new Menu("Save the LoliPop", boutons, actions);
+		new MenuPrincipale("Save the LoliPop", boutons, actions);
 	}
 
 	@Override

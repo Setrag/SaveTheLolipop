@@ -41,17 +41,22 @@ public class Affichages {
 		}
 		image.draw(coord.getX(), coord.getY());
 	}
-
-	public static void bouton(String messageBouton, Coordonnees coord,
-			Integer largeur, Integer hauteur) {
+	
+	public static void bouton (String messageBouton, Coordonnees coord,
+			Integer largeur, Integer hauteur, Color font, Color ecriture) {
 		Float x = coord.getX();
 		Float y = coord.getY();
 
 		Color.white.bind();
-		g.setColor(Color.gray);
+		g.setColor(font);
 		g.fillRoundRect(x, y, largeur, hauteur, 5);
-		g.setColor(Color.white);
+		g.setColor(ecriture);
 		g.drawString(messageBouton, x + (largeur / 2) - messageBouton.length() * 5, y);
+	}
+	
+	public static void bouton(String messageBouton, Coordonnees coord,
+			Integer largeur, Integer hauteur) {
+		bouton(messageBouton, coord, largeur, hauteur, Color.gray, Color.white);
 	}
 
 	public static void afficheString(String str, Coordonnees coord, Color c) {

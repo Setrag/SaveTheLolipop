@@ -1,6 +1,6 @@
 package saveTheLolipop.moteur.gestionnaireEvenements.evenements.bouton.actions;
 
-import saveTheLolipop.moteur.elements.entités.Joueur;
+import saveTheLolipop.moteur.elements.entites.Joueur;
 import saveTheLolipop.moteur.gestionnaireEtats.GestionnaireEtat;
 import saveTheLolipop.moteur.gestionnaireEtats.utilitaire.EnumEtat;
 
