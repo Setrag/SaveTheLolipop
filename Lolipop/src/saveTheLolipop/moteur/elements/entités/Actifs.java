@@ -21,8 +21,8 @@ public abstract class Actifs extends ElementsJeu {
 		this.moving = false;
 	}
 
-	public Actifs(String nom, EnumType type) {
-		super(nom, type);
+	public Actifs(String nom, EnumType type, Integer profondeurAffichage) {
+		super(nom, type, profondeurAffichage);
 		this.PV = 100;
 		this.ATT = 10;
 		this.Vitesse = 0.15f;
@@ -30,8 +30,8 @@ public abstract class Actifs extends ElementsJeu {
 	}
 
 	public Actifs(String nom, Coordonnees coord, EnumType type, Integer PV,
-			Integer ATT, Float Vitesse) {
-		super(nom, coord, type);
+			Integer ATT, Float Vitesse, Integer profondeurAffichage) {
+		super(nom, coord, type, profondeurAffichage);
 		this.PV = PV;
 		this.ATT = ATT;
 		this.Vitesse = Vitesse;

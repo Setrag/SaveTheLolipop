@@ -7,8 +7,7 @@ public class EtatMenuChoixJoueur extends Etat {
 	public EtatMenuChoixJoueur() {
 		System.out.println("etat choix joueur");
 		String[] boutons = { "Guerrier", "Mage", "Archer" };
-		ActionBouton[] actions = { new NouveauJeuG(), new NouveauJeuM(),
-				new NouveauJeuA() };
+		ActionBouton[] actions = { new NouveauJeuG(), new NouveauJeuM(), new NouveauJeuA() };
 		new Menu("Save the LoliPop", boutons, actions);
 	}
 

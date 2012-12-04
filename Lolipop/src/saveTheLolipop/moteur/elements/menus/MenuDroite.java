@@ -13,8 +13,8 @@ public class MenuDroite extends Elements {
 	private Float largeur;
 
 	public MenuDroite(String nom) {
-		super(nom, new Coordonnees(Display.getWidth(), 0));
-		this.largeur = 200f;
+		super(nom, new Coordonnees(Display.getWidth() - 144, 0), 1);
+		this.largeur = 144f;
 	}
 
 	@Override

@@ -22,7 +22,7 @@ public class GestionnaireClavierSouris {
 	// gestion des entrer clavier souris
 	public static void gestionnaireClavier() {
 		while (Keyboard.next()) {
-			// ici les actions liers aux différente entrée clavierszss
+			// ici les actions liers aux différente entrée clavier
 			// verif déplacement
 			enMouvementHaut = Keyboard.isKeyDown(conf.getMoveUp());
 			enMouvementBas = Keyboard.isKeyDown(conf.getMoveDown());

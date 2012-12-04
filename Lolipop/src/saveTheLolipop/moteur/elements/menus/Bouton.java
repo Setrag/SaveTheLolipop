@@ -12,7 +12,7 @@ public class Bouton extends Elements {
 
 	public Bouton(String nom, ActionBouton action, Coordonnees coord,
 			Integer largeur, Integer hauteur) {
-		super(nom, coord);
+		super(nom, coord, 1);
 		this.hauteur = hauteur;
 		this.largeur = largeur;
 		this.action = action;

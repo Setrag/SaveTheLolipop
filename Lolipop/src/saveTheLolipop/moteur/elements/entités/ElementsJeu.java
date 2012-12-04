@@ -15,16 +15,19 @@ public abstract class ElementsJeu extends Elements {
 	// constructeur ?
 	public ElementsJeu() {
 		super();
+		super.ajoutElement();
 		this.type = EnumType.GUERRIER;
 	}
 
-	public ElementsJeu(String nom, EnumType type) {
-		super(nom);
+	public ElementsJeu(String nom, EnumType type, Integer profondeurAffichage) {
+		super(nom, profondeurAffichage);
+		super.ajoutElement();
 		this.type = type;
 	}
 
-	public ElementsJeu(String nom, Coordonnees coord, EnumType type) {
-		super(nom, coord);
+	public ElementsJeu(String nom, Coordonnees coord, EnumType type, Integer profondeurAffichage) {
+		super(nom, coord, profondeurAffichage);
+		super.ajoutElement();
 		this.type = type;
 	}
 

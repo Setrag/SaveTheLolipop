@@ -7,11 +7,11 @@ public class CaseQuadrillage extends ElementsJeu {
 	private ElementsJeu elementJeu;
 
 	public CaseQuadrillage(Coordonnees coord) {
-		super("herbe", coord, EnumType.HERBE);
+		super("herbe", coord, EnumType.HERBE, 0);
 	}
 
 	public CaseQuadrillage(String nom, Coordonnees coord, EnumType type) {
-		super(nom, coord, type);
+		super(nom, coord, type, 0);
 	}
 
 	@Override
@@ -19,6 +19,10 @@ public class CaseQuadrillage extends ElementsJeu {
 		super.affiche();
 		if (elementJeu != null)
 			elementJeu.affiche();
+	}
+	
+	public void testAficher() {
+		super.affiche();
 	}
 
 	@Override
