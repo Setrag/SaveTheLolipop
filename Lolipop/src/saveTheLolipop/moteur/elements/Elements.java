@@ -11,19 +11,19 @@ public abstract class Elements {
 	public Elements() {
 		this.nom = "unnamed";
 		this.coord = new Coordonnees();
-		this.ajoutElement();
+		//this.ajoutElement();
 	}
 
 	public Elements(String nom) {
 		this.nom = nom;
 		this.coord = new Coordonnees();
-		this.ajoutElement();
+		//this.ajoutElement();
 	}
 
 	public Elements(String nom, Coordonnees coord) {
 		this.nom = nom;
 		this.coord = coord;
-		this.ajoutElement();
+		//this.ajoutElement();
 	}
 
 	public abstract void affiche();
