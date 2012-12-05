@@ -7,11 +7,11 @@ import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
 public abstract class Elements {
 	private String nom;
 	private Coordonnees coord;
-	private Integer profondeurAffichage;
 	
 	public Elements() {
 		this.nom = "unnamed";
 		this.coord = new Coordonnees();
+<<<<<<< HEAD
 		this.profondeurAffichage = 1;
 	}
 	
@@ -25,10 +25,26 @@ public abstract class Elements {
 		this.nom = nom;
 		this.coord = coord;
 		this.profondeurAffichage = profondeurAffichage;
+=======
+		this.ajoutElement();
+	}
+
+	public Elements(String nom) {
+		this.nom = nom;
+		this.coord = new Coordonnees();
+		this.ajoutElement();
+	}
+
+	public Elements(String nom, Coordonnees coord) {
+		this.nom = nom;
+		this.coord = coord;
+		this.ajoutElement();
+>>>>>>> parent of d6646b8... ajout de la profondeur d'affichage: correction de l'erreur sur l'affiche de la carte
 	}
 
 	public abstract void affiche();
 
+<<<<<<< HEAD
 	public abstract void verificationEvenement();
 	
 	public void ajoutElementAffiche() {
@@ -42,6 +58,17 @@ public abstract class Elements {
 		Afficheur.delElemPresent(this, profondeurAffichage);
 	}
 	public void supElementEvenement() {
+=======
+	public abstract void deplacement(int delta);
+
+	public void ajoutElement() {
+		Afficheur.addElemPresent(this);
+		GestionnaireEvenement.addElemPresent(this);;
+	}
+
+	public void supElement() {
+		Afficheur.delElemPresent(this);
+>>>>>>> parent of d6646b8... ajout de la profondeur d'affichage: correction de l'erreur sur l'affiche de la carte
 		GestionnaireEvenement.delElemPresent(this);;
 	}
 

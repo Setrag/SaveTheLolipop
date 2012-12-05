@@ -1,8 +1,7 @@
 package saveTheLolipop.moteurGraphique.boucleAffichage;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
+import java.util.Iterator;
 import java.util.Set;
 
 import saveTheLolipop.moteur.elements.Elements;
@@ -11,16 +10,20 @@ import saveTheLolipop.moteurGraphique.donneesAffichage.utilitaire.UtilitaireAffi
 
 public class Afficheur {
 	// attributes
+<<<<<<< HEAD
 	private static Map<Integer, Set<Elements>> elemPresent = new HashMap<Integer, Set<Elements>>();
 	private static Set<Actifs> elemActif = new HashSet<Actifs>();
+=======
+	private static Set<Elements> elemPresent = new HashSet<Elements>();
+>>>>>>> parent of d6646b8... ajout de la profondeur d'affichage: correction de l'erreur sur l'affiche de la carte
 
 	// fonctions
 	public static void affichageInitial() {
-		initListeElemPresent();
 		//UtilitaireAffichage.displayModeList();
 	}
 
 	public static void affichageImage() {
+<<<<<<< HEAD
 		for (int i = 0; i < elemPresent.size(); i ++) {
 			Set<Elements> elemsPresentHauteur = elemPresent.get(i);
 			//System.out.println("element a afficher " + elemPresent.get(i).size() + " pour la profondeur " + i);
@@ -28,12 +31,24 @@ public class Afficheur {
 				e.affiche();
 				//System.out.println(e.getNom());
 			}
+=======
+		Iterator<Elements> elems = elemPresent.iterator();
+		// System.out.println("element a afficher " + elemPresent.size());
+		while (elems.hasNext()) {
+			elems.next().affiche();
+>>>>>>> parent of d6646b8... ajout de la profondeur d'affichage: correction de l'erreur sur l'affiche de la carte
 		}
 	}
 
 	public static void deplacementImage(int delta) {
+<<<<<<< HEAD
 		for (Actifs a : elemActif) {
 			a.deplacement(delta);
+=======
+		Iterator<Elements> elems = elemPresent.iterator();
+		while (elems.hasNext()) {
+			elems.next().deplacement(delta);
+>>>>>>> parent of d6646b8... ajout de la profondeur d'affichage: correction de l'erreur sur l'affiche de la carte
 		}
 	}
 
@@ -41,6 +56,7 @@ public class Afficheur {
 		UtilitaireAffichage.pleineEcran();
 	}
 
+<<<<<<< HEAD
 	public static void addElemActif(Actifs a) {
 		elemActif.add(a);
 	}
@@ -51,21 +67,18 @@ public class Afficheur {
 	
 	public static void addElemPresent(Elements e, Integer profondeur) {
 		elemPresent.get(profondeur).add(e);
+=======
+	public static void addElemPresent(Elements e) {
+		elemPresent.add(e);
+>>>>>>> parent of d6646b8... ajout de la profondeur d'affichage: correction de l'erreur sur l'affiche de la carte
 	}
 
-	public static void delElemPresent(Elements e, Integer profondeur) {
-		elemPresent.get(profondeur).remove(e);
+	public static void delElemPresent(Elements e) {
+		elemPresent.remove(e);
 	}
 
 	public static void delTousElemPresent() {
 		elemPresent.clear();
-		initListeElemPresent();
-	}
-
-	private static void initListeElemPresent() {
-		elemPresent.put(0, new HashSet<Elements>());
-		elemPresent.put(1, new HashSet<Elements>());
-		elemPresent.put(2, new HashSet<Elements>());
 	}
 
 }

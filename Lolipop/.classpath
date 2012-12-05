@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="lib" path="slick-util/lib/slick.jar"/>
-	<classpathentry kind="lib" path="lwjgl-2.8.4/jar/lwjgl.jar" sourcepath="C:/Users/asus/.m2/repository/org/lwjgl/lwjgl/lwjgl/2.8.4/lwjgl-2.8.4-sources.jar">
+	<classpathentry kind="lib" path="lwjgl-2.8.4/jar/lwjgl.jar">
 		<attributes>
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="Lolipop/lwjgl-2.8.4/native/windows"/>
 		</attributes>
