@@ -49,7 +49,7 @@ public class ChargementSauvegarde {
 
 	public static void serializer(String fichierSer, Elements elem) {
 		try {
-			FileOutputStream fichier = new FileOutputStream(fichierSer);
+			FileOutputStream fichier = new FileOutputStream(fichierSer + ".ser");
 			ObjectOutputStream oos = new ObjectOutputStream(fichier);
 			oos.writeObject(elem);
 			oos.flush();

@@ -13,34 +13,35 @@ public abstract class Elements {
 		this.nom = "unnamed";
 		this.coord = new Coordonnees();
 		this.profondeurAffichage = 1;
-		this.ajoutElement();
 	}
-
+	
 	public Elements(String nom, Integer profondeurAffichage) {
 		this.nom = nom;
 		this.coord = new Coordonnees();
 		this.profondeurAffichage = profondeurAffichage;
-		this.ajoutElement();
 	}
-
+	
 	public Elements(String nom, Coordonnees coord, Integer profondeurAffichage) {
 		this.nom = nom;
 		this.coord = coord;
 		this.profondeurAffichage = profondeurAffichage;
-		this.ajoutElement();
 	}
 
 	public abstract void affiche();
 
-	public abstract void deplacement(int delta);
-
-	public void ajoutElement() {
+	public abstract void verificationEvenement();
+	
+	public void ajoutElementAffiche() {
 		Afficheur.addElemPresent(this, profondeurAffichage);
+	}
+	public void ajoutElementEvenement() {
 		GestionnaireEvenement.addElemPresent(this);;
 	}
 
-	public void supElement() {
+	public void supElementAffiche() {
 		Afficheur.delElemPresent(this, profondeurAffichage);
+	}
+	public void supElementEvenement() {
 		GestionnaireEvenement.delElemPresent(this);;
 	}
 
@@ -61,10 +62,6 @@ public abstract class Elements {
 
 	public void setCoord(Coordonnees coord) {
 		this.coord = coord;
-	}
-
-	public void setProfondeurAffichage(Integer profondeurAffichage) {
-		this.profondeurAffichage = profondeurAffichage;
 	}
 
 }
