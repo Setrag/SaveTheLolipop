@@ -5,7 +5,7 @@ import saveTheLolipop.moteur.gestionnaireEtats.etats.fabrique.FabriqueEtat;
 import saveTheLolipop.moteur.gestionnaireEtats.utilitaire.EnumEtat;
 import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireClavierSouris;
 import saveTheLolipop.moteur.gestionnaireEvenements.GestionnaireEvenement;
-import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
+import saveTheLolipop.moteurGraphique.boucleAffichage.GestionnaireAffichage;
 
 public class GestionnaireEtat {
 	private static EnumEtat etatCourant = EnumEtat.MENU;
@@ -23,7 +23,7 @@ public class GestionnaireEtat {
 	public static void setEtatCourant(EnumEtat etat) {
 		etatCourant = etat;
 		GestionnaireEvenement.delTousElemPresent();
-		Afficheur.delTousElemPresent();
+		GestionnaireAffichage.delTousElemPresent();
 		GestionnaireClavierSouris.reset();
 		changementEtat = true;
 	}

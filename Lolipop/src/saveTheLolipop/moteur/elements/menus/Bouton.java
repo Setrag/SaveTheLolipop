@@ -19,14 +19,8 @@ public class Bouton extends Elements {
 	private Color ecriture;
 	private ActionBouton action;
 
-<<<<<<< HEAD
 	public Bouton(String nom, ActionBouton action, Coordonnees coord, Integer largeur, Integer hauteur) {
 		super(nom, coord, 1);
-=======
-	public Bouton(String nom, ActionBouton action, Coordonnees coord,
-			Integer largeur, Integer hauteur) {
-		super(nom, coord);
->>>>>>> parent of d6646b8... ajout de la profondeur d'affichage: correction de l'erreur sur l'affiche de la carte
 		this.hauteur = hauteur;
 		this.largeur = largeur;
 		this.action = action;

@@ -12,6 +12,7 @@ import saveTheLolipop.moteur.gestionnaireEvenements.evenements.bouton.actions.Fi
 import saveTheLolipop.moteur.gestionnaireEvenements.evenements.bouton.actions.Sauvegarde;
 import saveTheLolipop.moteur.utilitaire.Coordonnees;
 import saveTheLolipop.moteurGraphique.donneesAffichage.Affichages;
+import saveTheLolipop.moteurGraphique.donneesAffichage.DeplacementAffichages;
 
 public class MenuDroite extends Elements {
 	private Float largeur;
@@ -19,7 +20,6 @@ public class MenuDroite extends Elements {
 	private Bouton quitter;
 	private Bouton save;
 
-<<<<<<< HEAD
 	public MenuDroite(String nom, Elements e) {
 		super(nom, new Coordonnees(Display.getWidth() - 144, 0), 1);
 		this.largeur = 144f;
@@ -35,10 +35,6 @@ public class MenuDroite extends Elements {
 	
 	public MenuDroite(String nom, Set<MenuContenu> contenu, Elements e) {
 		super(nom, new Coordonnees(Display.getWidth() - 144, 0), 1);
-=======
-	public MenuDroite(String nom) {
-		super(nom, new Coordonnees(Display.getWidth() - 144, 0));
->>>>>>> parent of d6646b8... ajout de la profondeur d'affichage: correction de l'erreur sur l'affiche de la carte
 		this.largeur = 144f;
 		this.contenu = contenu;
 		save = new Bouton("Sauvegarder", new Sauvegarde(e.getNom(), e), 
@@ -56,7 +52,6 @@ public class MenuDroite extends Elements {
 		Affichages.menuDroite(this.getCoord(), this.largeur);
 		Affichages.afficheString(this.getNom(), new Coordonnees(this.getCoord()
 				.getX() + (largeur / 2) - (this.getNom().length() * 5), 10f), Color.white);
-<<<<<<< HEAD
 		for(MenuContenu m: contenu) {
 			m.affiche();
 		}
@@ -71,14 +66,6 @@ public class MenuDroite extends Elements {
 		DeplacementAffichages.apparitionDroite(this.getCoord(), this.largeur);
 		DeplacementAffichages.apparitionDroite(save.getCoord(), this.largeur - 10);
 		DeplacementAffichages.apparitionDroite(quitter.getCoord(), this.largeur - 10);
-=======
-
-	}
-
-	@Override
-	public void deplacement(int delta) {
-		//DeplacementAffichages.apparitionDroite(this.getCoord(), this.largeur);
->>>>>>> parent of d6646b8... ajout de la profondeur d'affichage: correction de l'erreur sur l'affiche de la carte
 	}
 
 }

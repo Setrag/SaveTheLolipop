@@ -15,14 +15,14 @@ public class Menu extends Elements {
 	private Set<Bouton> messageBoutons = new HashSet<Bouton>();
 
 	public Menu(String nom) {
-		super(nom, new Coordonnees((float) (Display.getWidth() / 2), 10f));
+		super(nom, new Coordonnees((float) (Display.getWidth() / 2), 10f), 1);
 		System.out.println(Display.getWidth() / 2);
 		System.out.println(Display.getHeight() / 2);
 		//Afficheur.addElemPresent(this);
 	}
 
 	public Menu(String nom, String[] boutons, ActionBouton[] actions) {
-		super(nom, new Coordonnees((Display.getWidth() / 2f), 10f));
+		super(nom, new Coordonnees((Display.getWidth() / 2f), 10f), 1);
 		Float distInterBouton = this.getCoord().getY() + 100;
 		Float tiers = (this.getCoord().getX() / 3) * 2;
 		for (int i = 0; i < boutons.length; i++) {
@@ -44,7 +44,8 @@ public class Menu extends Elements {
 	}
 
 	@Override
-	public void deplacement(int delta) {
-		// pas de déplacement pour le menu
+	public void verificationEvenement() {
+		// TODO Auto-generated method stub
+		
 	}
 }

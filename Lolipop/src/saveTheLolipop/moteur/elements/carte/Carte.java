@@ -19,16 +19,12 @@ public class Carte extends Elements implements java.io.Serializable{
 	//private Coordonnees coord;
 
 	public Carte() {
-<<<<<<< HEAD
 		super("Carte_test", 1);
 		matricecarte = new CaseQuadrillage[(Display.getHeight() / 16) + 1][(Display.getWidth() / 16) + 1];
-=======
-		matricecarte = new CaseQuadrillage[(Display.getHeight() / 16) + 1][(Display.getWidth() / 16) - 9];
->>>>>>> parent of d6646b8... ajout de la profondeur d'affichage: correction de l'erreur sur l'affiche de la carte
 		Float x = 0f;
 		Float y = 0f;
 		for (int i = 0; i <= Display.getHeight() / 16; i++) {
-			for (int j = 0; j < (Display.getWidth() / 16) - 9; j++) {
+			for (int j = 0; j < (Display.getWidth() / 16); j++) {
 				matricecarte[i][j] = new CaseQuadrillage(new Coordonnees(x, y));
 				x += 16;
 			}

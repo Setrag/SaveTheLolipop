@@ -15,14 +15,8 @@ public class EtatMenuPrincipale extends Etat {
 		System.out.println("etat menu");
 		titre = "Save The Lolipop";
 		String[] boutons = { "jeu", "choix personnage", "editeur de carte", "Quitter" };
-<<<<<<< HEAD
 		ActionBouton[] actions = { new NouveauJeu(), new AuMenuChoix(),	new NouveauEditeurCarte(), new FinJeu() };
 		m = new MenuPrincipale(titre, boutons, actions);
-=======
-		ActionBouton[] actions = { new NouveauJeu(), new AuMenuChoix(),
-				new NouveauEditeurCarte(), new FinJeu() };
-		new Menu("Save the LoliPop", boutons, actions);
->>>>>>> parent of d6646b8... ajout de la profondeur d'affichage: correction de l'erreur sur l'affiche de la carte
 	}
 
 	@Override

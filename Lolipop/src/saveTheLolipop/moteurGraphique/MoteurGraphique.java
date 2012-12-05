@@ -7,7 +7,7 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.newdawn.slick.Graphics;
 
-import saveTheLolipop.moteurGraphique.boucleAffichage.Afficheur;
+import saveTheLolipop.moteurGraphique.boucleAffichage.GestionnaireAffichage;
 import saveTheLolipop.moteurGraphique.donneesAffichage.Affichages;
 import static org.lwjgl.opengl.GL11.*;
 
@@ -31,15 +31,15 @@ public class MoteurGraphique {
 		Affichages.setG(new Graphics(1, 1));
 		// init affichage OpenGl
 		initGL();
-		Afficheur.affichageInitial();
+		GestionnaireAffichage.affichageInitial();
 	}
 
 	public void frame(int delta) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		// debut affichage OpenGl
-		Afficheur.affichageImage();
-		Afficheur.deplacementImage(delta);
-		Afficheur.optionAffichage();
+		GestionnaireAffichage.affichageImage();
+		GestionnaireAffichage.deplacementImage(delta);
+		GestionnaireAffichage.optionAffichage();
 		// fin affichage OpenGl
 		Display.update();
 		Display.sync(60);
