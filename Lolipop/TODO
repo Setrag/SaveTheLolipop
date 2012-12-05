@@ -1,0 +1,3 @@
+centraliser les gestionnaires dans moteur
+intégrer le moteur graphique au moteur pour l'acces
+créer un instance des gestionnaire ne pas les avoir en static
